@@ -1,13 +1,43 @@
+let cantidad = 0;
+let resultado = 0;
+
+const cantidadProductos = () => cantidad = parseInt (prompt("Cuántos productos querés comprar?"));
+
+/*function cantidadProductos (){
+cantidad = parseInt (prompt("Cuántos productos querés comprar?"));
+}*/
+
+const precioTotal = (cantidadTotal, precio, envio) => resultado = ((cantidadTotal * precio) + envio);
+
+/*function precioTotal (cantidadTotal, precio, envio){
+resultado = ((cantidadTotal * precio) + envio);
+}*/
+
+function mostrarPrecioTotal (mostrarTotal){
+  alert ("El total de su compra con envío es: " + mostrarTotal);
+}
+
+const finCompra = () => alert ("Excelente compra!");
+
+/*function finCompra() {
+alert ("Excelente compra!");
+}*/
+
+cantidadProductos ();
+precioTotal (cantidad, 200, 50);
+mostrarPrecioTotal (resultado);
+finCompra ();
 
 
-function sumar () {
+
+/*function sumar () {
 let numero1 = 2;
 let numero2 = 3;
 let resultado = (numero1 + numero2);
 return resultado;
 }
 
-alert (sumar());
+sumar();*/
 
 
 /*let suma = 0;
