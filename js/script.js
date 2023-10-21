@@ -1,13 +1,20 @@
 let cantidad = 0;
 let resultado = 0;
 
-const cantidadProductos = () => cantidad = parseInt (prompt("Cuántos productos querés comprar?"));
+/*const cantidadProductos = () => cantidad = parseInt (prompt("Cuántos productos quiere comprar?"));*/
 
-/*function cantidadProductos (){
-cantidad = parseInt (prompt("Cuántos productos querés comprar?"));
-}*/
+function cantidadProductos (){
+while (true){
+cantidad = parseInt (prompt("¿Cuántos productos quiere comprar?"));
+if (isNaN(cantidad)){
+  alert ("Por favor digite un número válido.")
+} else {
+  break;
+}
+} 
+}
 
-const precioTotal = (cantidadTotal, precio, envio) => resultado = ((cantidadTotal * precio) + envio);
+const precioTotal = (cantidadTotal, precio, envio) => (cantidadTotal * precio) + envio;
 
 /*function precioTotal (cantidadTotal, precio, envio){
 resultado = ((cantidadTotal * precio) + envio);
@@ -17,16 +24,26 @@ function mostrarPrecioTotal (mostrarTotal){
   alert ("El total de su compra con envío es: " + mostrarTotal);
 }
 
-const finCompra = () => alert ("Excelente compra!");
+const finCompra = () => confirm ("¡Excelente compra!");
 
 /*function finCompra() {
 alert ("Excelente compra!");
 }*/
 
+function otraCompra (){
+let consulta = confirm ("¿Usted desea realizar otra compra? Haga click en aceptar o cancelar para finalizar.");
+if (consulta){
+  alert ("¡Me alegra que siga con nosotros!");
+} else {
+ alert ("¡Hasta la proxima!")
+}
+}
+
+
 cantidadProductos ();
-precioTotal (cantidad, 200, 50);
+resultado = precioTotal (cantidad, 200, 50);
 mostrarPrecioTotal (resultado);
-finCompra ();
+otraCompra ();
 
 
 
