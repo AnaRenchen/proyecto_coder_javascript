@@ -54,7 +54,7 @@
  
 
   .titulo_portada{
-    margin-top: 30px;
+
     color: black;
     font-size: 3.5rem;
     font-family: 'Times New Roman', Times, serif;
@@ -92,6 +92,7 @@
     justify-content: center;
     justify-items: center;
     text-align: center;
+    margin: 50px;
 
   }
 
@@ -189,17 +190,19 @@ line-height: 2rem;
 
       }
   }
-  @media only screen and (max-width: 450px){
+  @media only screen and (max-width: 550px){
   .parallax_portada1{
     height: 30rem;
     background-color:#740001 ;
   }
-  .items_index{
-    margin: 50px;
-  }
+
   }
   @media only screen and (max-width: 374px){
     .iconos_footer{
+        display: flex;
+        flex-direction: row;
+
+      justify-content: center;
     margin: 0;
   }
   }
