@@ -96,13 +96,6 @@
 
   }
 
-  .contenedor_index .items_index {
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-items: center;
-    margin-bottom: 50px;
-    text-align: center;
-  }
 
 
   .contenedor_footer {
@@ -128,7 +121,6 @@ margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin-left: 50px;
     align-items:flex-start;
     margin: 50px;
 line-height: 2rem;
@@ -200,9 +192,8 @@ line-height: 2rem;
   @media only screen and (max-width: 374px){
     .iconos_footer{
         display: flex;
-        flex-direction: row;
-
-      justify-content: center;
-    margin: 0;
+        flex-direction: column;
+       justify-content: space-around;
+       margin: 0;
   }
   }
