@@ -96,14 +96,11 @@
 
   }
 
-
-
   .contenedor_footer {
     background-color: #D3A625;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+    justify-content: center;
+    align-content: center;
   }
 
   .logo_footer{
@@ -112,36 +109,16 @@
 
   .logo_direccion{
     width: 5rem;
-margin-bottom: 20px;
   }
-
-
 
   .items_footer{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     flex-direction: column;
-    align-items:flex-start;
+    align-items:center;
     margin: 50px;
-line-height: 2rem;
-  }
-
-  .iconos_footer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    align-content: center;
-    align-items: center;
-    margin: 50px;
-    
-  }
-
-  .dire_logo_texto{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-   justify-self: center;
-
+    line-height: 2rem;
   }
 
 
@@ -159,29 +136,18 @@ line-height: 2rem;
   }
 
  
-
   footer .logo_insta {
     width: 40px;
+    margin-bottom: 50px;
     transition: 0.8s ease-in-out;
-    margin-right: 100px;
   }
   footer .logo_insta:hover {
     transform: scale(1.3);
     transition: 0.8s;
   }
 
-  @media only screen and (max-width: 768px){
-   .contenedor_footer{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-      }
-      .items_footer{
-        align-items: center;
 
-      }
-  }
+    
   @media only screen and (max-width: 550px){
   .parallax_portada1{
     height: 30rem;
@@ -189,11 +155,6 @@ line-height: 2rem;
   }
 
   }
-  @media only screen and (max-width: 374px){
-    .iconos_footer{
-        display: flex;
-        flex-direction: column;
-       justify-content: space-around;
-       margin: 0;
-  }
-  }
+ 
+  
+
