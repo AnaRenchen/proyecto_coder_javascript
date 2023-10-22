@@ -31,12 +31,47 @@
     color: #EEBA30;
   }
 
+  
+
+  body, html {
+    height: 100%;
+  }
+  
+  .parallax1 {
+    background-image: url('../Photos/foto_back_portada.jpeg');
+    height: 50%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .parallax2 {
+    background-image: url('../Photos/foto_back_portada.jpeg');
+    height: 50%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .parallax_portada1{
+    height: 300px;
+    background-color:#740001 ;
+  }
+  .parallax_portada2{
+    height: 300px;
+    background-color: #740001;
+  }
+
+
+
   .titulo_portada{
     color: black;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 0.1em;
-    font-weight: lighter;
+    font-weight:100;
     line-height: 1.2;
   }
 
@@ -63,10 +98,16 @@
     flex-wrap: wrap;
     justify-content: center;
     justify-items: center;
-    align-items: center;
+    align-content: center;
+    align-self: center;
     text-align: center;
-    margin-top: 50px;
-  min-height: 80vh;
+  }
+  .contenedor_index .items_index {
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    margin-top: 100px;
   }
 
   .contenedor_index .items_index {
@@ -77,27 +118,41 @@
     text-align: center;
   }
 
-  .items_index{
 
-  }
-
-  footer {
+  .diseñadopor {
     background-color: #D3A625;
     padding: 15px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+    
   }
+
+  .elementos_footer{
+    background-color: #D3A625;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   footer .footer_letter {
     font-family: "Times New Roman", Times, serif;
     font-size: 0.8rem;
     font-weight: bolder;
     color:black;
   }
+  .footer_letter1{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    color:black;
+  }
+
   footer .logo_insta {
-    width: 30px;
-    margin-right: 20px;
+    width: 40px;
+    margin-bottom: 50px;
     transition: 0.8s ease-in-out;
   }
   footer .logo_insta:hover {
