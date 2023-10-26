@@ -30,7 +30,7 @@ function elegirProducto() {
 
     function agregarProducto (producto) {
       if (carritoCompras.includes(producto)) {
-        alert("Error al agregar el producto " + producto + ", porque ya está en tu carrito.");
+        alert("Error al agregar el producto " + producto + " porque ya está en su carrito.");
         console.log(carritoCompras);
       } else {
         carritoCompras.push(producto);
@@ -47,7 +47,7 @@ function elegirProducto() {
     if (confirmar){
       agregarNuevoProducto();
     } else{
-      alert ("Ahora usted será dirigido al sistema de pago.");
+      alert ("Vamos a cerrar su carrito y dirigirle al sistema de envío y pago.");
     }
   }
 
@@ -66,15 +66,10 @@ function mostrarPrecioTotal (mostrarTotal){
   console.log (mostrarTotal);
 }
 
-function otraCompra (){
-let consulta = confirm ("¿Usted desea realizar otra compra? Haga click en aceptar o cancelar para finalizar.");
-if (consulta){
-  alert ("¡Me alegra que siga con nosotros!");
-} else {
- alert ("¡Hasta la proxima!")
-}
+function finalizarCompra (){
+ alert ("Elija ahora su método de pago para que podamos finalizar la compra.")
 }
 
 resultado = precioTotal (cantidadProductos, precio, envio);
 mostrarPrecioTotal (resultado);
-otraCompra ();
+finalizarCompra ();
