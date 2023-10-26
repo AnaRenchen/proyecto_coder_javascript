@@ -3,9 +3,14 @@ let productoSeleccionado;
 
 const productos = ["pintura1", "pintura2", "pintura3", "pintura4", "pintura5", "pintura6", "pintura7", "pintura8", "pintura9", "pintura10"];
 
+let listaProductos = "";
+
 for (let i=0; i < productos.length; i++){
-  console.log (productos[i]);
+listaProductos+= productos[i] + "\n";
 }
+
+alert("Nuestra lista de Productos:\n" + listaProductos);
+console.log ("Nuestra lista de Productos:\n" + listaProductos);
 
 const carritoCompras =[];
 
