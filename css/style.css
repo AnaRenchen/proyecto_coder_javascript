@@ -48,7 +48,7 @@
 
 
   .parallax_portada1{
-    height: 20rem;
+    
     background-color:#740001 ;
   }
  
@@ -93,7 +93,37 @@
     justify-items: center;
     text-align: center;
     margin: 50px;
+  }
 
+
+  .titulos_paginas{
+    font-size: 2.5rem;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: lighter;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  .texto_paginas{
+    font-size: 1.3rem;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    margin-top: 5px;
+    letter-spacing: 0.1em;
+  }
+
+  .texto_paginas_shop_dolares{
+    font-size: 0.8rem;
+    font-weight: bolder;
+    font-style: italic;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    margin-top: 5px;
+    letter-spacing: 0.1em;
   }
 
   .contenedor_footer {
@@ -122,19 +152,26 @@
   }
 
 
-  footer .footer_letter {
+
+  .footer_letter {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2rem;
+    color:black;
+    text-align: center;
+  }
+  footer .footer_letter1 {
     font-family: "Times New Roman", Times, serif;
     font-size: 0.8rem;
     font-weight: bolder;
     color:black;
   }
-
-  .footer_letter1 {
+  footer .footer_letter2 {
     font-family: "Times New Roman", Times, serif;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
+    font-weight: bolder;
     color:black;
+    margin-top: 50px;
   }
-
  
   footer .logo_insta {
     width: 40px;
@@ -146,15 +183,15 @@
     transition: 0.8s;
   }
 
-
+  @media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+}
     
-  @media only screen and (max-width: 550px){
-  .parallax_portada1{
-    height: 30rem;
-    background-color:#740001 ;
-  }
+  
 
-  }
+  
  
   
 
