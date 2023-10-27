@@ -52,7 +52,7 @@ function elegirProducto() {
     if (confirmar){
       agregarNuevoProducto();
     } else{
-      alert ("Vamos a cerrar su carrito y dirigirle al sistema de envío y pago.");
+      alert ("Finalizaremos la compra y en seguida usted será dirigido al sistema de envío y pago.");
     }
   }
 
@@ -71,10 +71,7 @@ function mostrarPrecioTotal (mostrarTotal){
   console.log (mostrarTotal);
 }
 
-function finalizarCompra (){
- alert ("Elija ahora su método de pago para que podamos finalizar la compra.")
-}
 
 resultado = precioTotal (cantidadProductos, precio, envio);
 mostrarPrecioTotal (resultado);
-finalizarCompra ();
+
