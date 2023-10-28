@@ -21,7 +21,7 @@ function elegirProducto() {
     productoSeleccionado = prompt('¿Qué pintura le gustaría comprar?');
 
     if (productoSeleccionado === null) {
-      alert("Usted ha elegido cancelar. Por favor ingrese un producto de la lista.");
+      return null;
     } else {
       producto = productoSeleccionado.toLowerCase();
       if (productos.includes(producto)) {
@@ -31,7 +31,8 @@ function elegirProducto() {
       }
     }
   }
-  }
+}
+  
 
     function agregarProducto (producto) {
       if (carritoCompras.includes(producto)) {
@@ -46,6 +47,9 @@ function elegirProducto() {
 
   function agregarNuevoProducto (){
     producto = elegirProducto();
+    if (producto === null) {
+      alert ("La compra ha sido cancelada.");
+    } else{
     agregarProducto(producto);
 
 		let confirmar = confirm('¿Desea agregar un nuevo producto?');
@@ -55,6 +59,7 @@ function elegirProducto() {
       alert ("Finalizaremos la compra y en seguida usted será dirigido al sistema de envío y pago.");
     }
   }
+}
 
 agregarNuevoProducto();
 
@@ -68,10 +73,12 @@ const precioTotal = (cantidadProductos, precio, envio) => (cantidadProductos * p
 
 function mostrarPrecioTotal (mostrarTotal){
   alert ("El total de su compra con envío es: " + mostrarTotal);
-  console.log (mostrarTotal);
+  console.log ("El total de su compra con envío es: " + mostrarTotal);
 }
 
-
 resultado = precioTotal (cantidadProductos, precio, envio);
-mostrarPrecioTotal (resultado);
+
+if (carritoCompras.length > 0){
+mostrarPrecioTotal(resultado);
+}
 
