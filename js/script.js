@@ -87,6 +87,7 @@ function elegirProducto() {
 
     const continuar = prompt ("¿Desea seguir agregando producto? Por favor escriba si o no y haga click en aceptar."). toLowerCase();
     if (continuar === "no"){
+      alert ("Procederemos a cerrar su compra.");
       break;
     }
       } else {
@@ -98,7 +99,10 @@ function elegirProducto() {
   }
 }
 mostrarCarrito();
+
 }
+
+
 
 // Funcion para mostrar el carrito de compras con el total de la compra
 
@@ -109,11 +113,13 @@ function mostrarCarrito () {
    carrito.forEach ((producto) => {mensajeCarrito+= ("- Producto: " + producto.nombre + "\n- Cantidad: " + producto.cantidad + "\n- Subtotal: " + producto.subtotal + "\n\n")});
   
    const total = carrito.reduce ((suma, producto) => suma + producto.subtotal, 0);
-   mensajeCarrito += "- Total: " + total + "\n ¡Excelente elección! Ahora usted será dirigido al sistema de envío y pago.";
+   mensajeCarrito += "- Total: " + total;
   
    alert (mensajeCarrito);
   } 
-    elegirProducto();
+
+   
+  elegirProducto();
     
 
    
