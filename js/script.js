@@ -122,9 +122,11 @@ function mostrarCarrito () {
   elegirProducto();
     
 
-   
+   localStorage.setItem ("productos",JSON.stringify(stockProductos));
 
-      
+   localStorage.setItem ("carrito", JSON.stringify(carrito));
+
+   localStorage.removeItem("pintura");
 
     
 

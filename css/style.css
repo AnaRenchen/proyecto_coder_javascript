@@ -188,8 +188,8 @@
   div.gallery {
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 1rem;
-    margin-bottom: 4rem;
+    margin: 0.6rem;
+    margin-bottom: 3rem;
   }
   
   div.gallery:hover {
@@ -212,7 +212,7 @@
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
-    
+    line-height: 18px;
 
   }
 
@@ -232,6 +232,11 @@
     transition: 0.5s;
   }
 
+  .flecha_arriba {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
   
   * {
     box-sizing: border-box;
