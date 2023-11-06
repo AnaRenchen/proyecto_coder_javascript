@@ -256,8 +256,6 @@
     flex-direction: column;
     justify-content: center;
     margin: 80px;
-    background-color: #ccc;
-    padding: 2rem;
   }
 
   .items_form{
@@ -268,7 +266,7 @@
     align-content: center;
   }
   .formulario input, .formulario textarea {
-    background-color: white;
+    background-color:beige;
     padding: 10px;
     width: 100%;
     margin: 8px 0;
@@ -287,11 +285,12 @@
   
   .formulario .button_form button[type=submit] {
     border: none;
-    color: black;
+    color:black;
     background-color: white;
     border-radius: 4px;
     font-family: "Times New Roman", Times, serif;
     font-weight: 600;
+    font-size: large;
     cursor: pointer;
     width: 100%;
     padding: 5px 15px;
@@ -299,8 +298,9 @@
     margin-top: 15px;
   }
   .formulario .button_form button[type=submit]:hover {
-    background-color:#D3A625 ;
+    background-color:#740001;
     transition: 0.5s;
+    color: #D3A625;
   }
   
   @media only screen and (max-width: 700px) {
