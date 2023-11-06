@@ -286,7 +286,7 @@
   .formulario .button_form button[type=submit] {
     border: none;
     color:black;
-    background-color: white;
+    background-color: #fefdf5;
     border-radius: 4px;
     font-family: "Times New Roman", Times, serif;
     font-weight: 600;
