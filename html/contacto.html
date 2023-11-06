@@ -51,6 +51,24 @@
                 <main>
                     <h1 class="titulos_paginas animate__animated animate__zoomIn"> Contacto </h1>
                     <p class="texto_paginas"> Para contactarse con nosotros por favor complete el formulario abajo. </p>
+
+
+                                <!-- Formulario de contacto-->
+            <form class="formulario" data-aos="fade-up" data-aos-duration="1500">
+                <div class=" items_form">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text" name="nombre" placeholder="Nombre y Apellido">
+                <label for="email">E-mail:</label>
+                <input type="text" name="email" placeholder="@ejemplo.com">
+                <label for="celular">Número de Celular:</label>
+                <input type="text" name="celular" placeholder="Número de Celular">
+                <label for="mensaje">Deje su mensaje:</label>
+                <textarea name="mensaje" placeholder="Escribe aquí su mensaje" cols="30" rows="10"></textarea>
+                <div class="button_form">
+                    <button type="submit">Enviar</button>
+                </div>
+            </div>
+            </form>
                 </main>
     <!--Footer de todas las paginas-->
     <footer>
@@ -75,6 +93,9 @@
 
    <!-- Vinculo pagina animaciones-->
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+    AOS.init();
+  </script>
     
 </body>
 </html>

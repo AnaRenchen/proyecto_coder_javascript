@@ -228,7 +228,7 @@
   transition: 0.5s;
   }
   button:hover {
-    background-color:#D3A625 ;
+    background-color:#D3A625;
     transition: 0.5s;
   }
 
@@ -246,6 +246,59 @@
     padding: 0 6px;
     float: left;
     width: 24.99999%;
+  }
+
+   /*Formulario de Contacto*/
+
+  .formulario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin: 80px;
+  }
+
+  .items_form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  .formulario input, .formulario textarea {
+    background-color: white;
+    padding: 10px;
+    width: 100%;
+    margin: 8px 0;
+    display: block;
+    border: 1.3px solid #740001;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .formulario label {
+    justify-self: center;
+    font-family: "Times New Roman", Times, serif;
+    color: black;
+    font-size: 1.3rem;
+    
+  }
+  
+  .formulario .button_form button[type=submit] {
+    border: none;
+    color: black;
+    background-color: white;
+    border-radius: 4px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    padding: 5px 15px;
+    transition: 0.5s;
+    margin-top: 15px;
+  }
+  .formulario .button_form button[type=submit]:hover {
+    background-color:#D3A625 ;
+    transition: 0.5s;
   }
   
   @media only screen and (max-width: 700px) {

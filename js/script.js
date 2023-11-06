@@ -24,19 +24,36 @@
 
 // Instanciar productos
 
-const pintura1 = new Producto ("karajishi", 250, 1);
-const pintura2 = new Producto ("samurai", 250, 1);
-const pintura3 = new Producto ("koi", 250, 1);
+const pintura1 = new Producto ("kiku", 200, 1);
+const pintura2 = new Producto ("dakki no ohyaku", 380, 1);
+const pintura3 = new Producto ("mongaku shonin", 108, 1);
+const pintura4 = new Producto ("kiyo hime", 450, 1);
+const pintura5 = new Producto ("unryu", 280, 1);
+const pintura6 = new Producto ("hou-oo", 350, 1);
+const pintura7 = new Producto ("kasha", 190, 1);
+const pintura8 = new Producto ("nio guardians ", 299, 1);
+const pintura9 = new Producto ("jiraya", 300, 1);
+const pintura10 = new Producto ("karajishi", 230, 1);
+const pintura11 = new Producto ("kingyo", 290, 1);
+const pintura12 = new Producto ("yamauba to kintaro", 400, 1);
+const pintura13 = new Producto ("kintaro to koi", 450, 1);
+const pintura14 = new Producto ("kitsune", 250, 1);
+const pintura15 = new Producto ("kiyohime", 380, 1);
+const pintura16 = new Producto ("orochimaru", 300, 1);
+const pintura17 = new Producto ("tsuru", 200, 1);
+const pintura18 = new Producto ("botan", 250, 1);
+const pintura19 = new Producto ("danshichi kurobei", 500, 1);
+const pintura20 = new Producto ("suimon yaburi", 450, 1);
+const pintura21 = new Producto ("oniwakamaru ", 500, 1);
+const pintura22 = new Producto ("tsunade", 300, 1);
+const pintura23 = new Producto ("tennin", 300, 1);
+const pintura24 = new Producto ("tora", 300, 1);
+const pintura25 = new Producto ("flash", 270, 1);
 
 
-// Mostrar productos en consola
-
-pintura1.infoProducto();
-pintura2.infoProducto();
-pintura3.infoProducto();
 
 // Crear un array con el stock de productos y un array de carrito de compras
-const stockProductos = [pintura1, pintura2, pintura3];
+const stockProductos = [pintura1, pintura2, pintura3, pintura4, pintura5, pintura6, pintura7, pintura8, pintura9, pintura10, pintura11, pintura12, pintura13, pintura14, pintura15, pintura16, pintura17, pintura18,pintura19, pintura20, pintura21, pintura22, pintura23, pintura24, pintura25];
 let carrito = [];
 
 
@@ -102,8 +119,6 @@ mostrarCarrito();
 
 }
 
-
-
 // Funcion para mostrar el carrito de compras con el total de la compra
 
 function mostrarCarrito () {
@@ -116,6 +131,7 @@ function mostrarCarrito () {
    mensajeCarrito += "- Total: " + total;
   
    alert (mensajeCarrito);
+   console.log (mensajeCarrito);
   } 
 
    
