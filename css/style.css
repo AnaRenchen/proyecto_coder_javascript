@@ -256,6 +256,8 @@
     flex-direction: column;
     justify-content: center;
     margin: 80px;
+    background-color: #ccc;
+    padding: 2rem;
   }
 
   .items_form{
