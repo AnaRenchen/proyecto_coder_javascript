@@ -8,6 +8,8 @@
     background-color: #fefdf5!important;
   }
 
+  /* Estilos del header común a todas las páginas*/
+
   header {
     background-color: #740001;
   }
@@ -19,7 +21,6 @@
     transform: scale(1.08);
   }
 
- 
   header .navbar .navbar-nav .nav-link {
     color: white;
     text-decoration: none;
@@ -31,7 +32,7 @@
     color: #EEBA30;
   }
 
-  
+  /* Estilos de la portada de la página*/
 
   body, html {
     height: 100%;
@@ -39,20 +40,17 @@
   
   .parallax1 {
     background-image: url('../Photos/foto_back_portada.jpeg');
-    height: 60%; 
+    height: 50%; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
 
-
   .parallax_portada1{
-    
     background-color:#740001;
   }
  
-
   .titulo_portada{
 
     color: black;
@@ -81,6 +79,20 @@
     line-height: 1.2;
   }
 
+  .texto_portada2{
+    color:black;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.1em;
+    font-weight: lighter;
+    line-height: 1.2;
+    text-align:start;
+  }
+
+  .sumie, .shinto {
+    font-style: italic;
+  }
+
   .contenedor_index{
     display: flex;
     flex-wrap: wrap;
@@ -94,7 +106,6 @@
     text-align: center;
     margin: 50px;
   }
-
 
   .titulos_paginas{
     font-size: 2.5rem;
@@ -126,6 +137,8 @@
     letter-spacing: 0.1em;
   }
 
+  /* Estilos del footer común a todas las páginas*/
+
   .contenedor_footer {
     background-color: #D3A625;
     display: flex;
@@ -135,6 +148,7 @@
 
   .logo_footer{
     width: 5rem;
+    margin-bottom: 20px;;
   }
 
   .logo_direccion{
@@ -151,11 +165,9 @@
     line-height: 2rem;
   }
 
-
-
   .footer_letter {
     font-family: "Times New Roman", Times, serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color:black;
     text-align: center;
   }
@@ -183,7 +195,7 @@
     transition: 0.8s;
   }
 
-  /*Galeria de imagenes para la compra de productos*/
+  /*Galeria de imágenes para la compra de productos*/
 
   div.gallery {
     border: 1px solid #ccc;
@@ -302,6 +314,8 @@
     transition: 0.5s;
     color: #D3A625;
   }
+
+  /* Estilos media query para responsiveness*/
   
   @media only screen and (max-width: 700px) {
     .responsive {
