@@ -260,6 +260,27 @@
     width: 24.99999%;
   }
 
+  .pinturas {
+    margin-top: 30px;
+    border-top: solid #740001;
+  }
+
+  .souvenirs{
+    border-top: solid #740001;
+  }
+
+  .titulo_section_shop{
+    color: black;
+    font-style: italic;
+    margin: 70px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 2rem;
+    background-color: #D3A625;
+    padding: 0.8rem;
+  }
+
    /*Formulario de Contacto*/
 
   .formulario {
