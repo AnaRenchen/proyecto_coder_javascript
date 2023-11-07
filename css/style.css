@@ -198,19 +198,20 @@
   /*Galeria de imágenes para la compra de productos*/
 
   div.gallery {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
     margin: 0.6rem;
     margin-bottom: 3rem;
   }
   
-  div.gallery:hover {
-    border: 1px solid #740001;
-  }
+ 
   
   div.gallery img {
     width: 100%;
     height: auto;
+  }
+
+   div.gallery img:hover {
+    border: 2px solid #740001;
   }
   
   div.desc {
