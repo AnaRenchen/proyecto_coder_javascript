@@ -22,11 +22,11 @@
 
 }
 
-// Clase para representar remeras
+// Clase para representar remeras: distinta de los demás productos porque tiene talles
 class Remera extends Productos {
-  constructor(nombre, precio, cantidad, vendido, subtotal, talles) {
+  constructor(nombre, precio, cantidad, vendido, subtotal, talle) {
     super(nombre, precio, cantidad, vendido, subtotal);
-    this.talles = talles;
+    this.talle = talle;
   }
 }
 
@@ -65,12 +65,23 @@ const remera_trai = new Remera ("remera trailokyavijaya", 20, 10, ["s","m", "l"]
 
 
 
-// Crear un array con el stock de Productoss y un array de carrito de compras
+// Crear un array con el stock de productos y un array de carrito de compras
 const stockProductos = [pintura1, pintura2, pintura3, pintura4, pintura5, pintura6, pintura7, pintura8, pintura9, pintura10, pintura11, pintura12, pintura13, pintura14, pintura15, pintura16, pintura17, pintura18,pintura19, pintura20, pintura21, pintura22, pintura23, pintura24, pintura25, incienso, mate, pulsera, remera_fudoshin, remera_trai];
 let carrito = [];
 
+//Funcion que filtra los productos por nombre (ejemplo de uso de una funcion filter):
 
-// Funcion para mostrar los Productoss y precios para que el usuario pueda elegir
+const filtro = stockProductos.filter (producto => producto.nombre.includes ("kintaro"));
+console.log (filtro);
+
+//Funcion que actualiza el precio: ejemplo de una funcion map:
+
+const actualizarPrecio = stockProductos.map (producto => ({ 
+nombre: producto.nombre,
+precio: producto.precio * 1.25}));
+console.log (actualizarPrecio);
+
+// Funcion para mostrar los productos y precios para que el usuario pueda elegir
 
 function mostrarProductos() {
   let mostrarProductos = "";
@@ -81,7 +92,7 @@ function mostrarProductos() {
   console.log("Nuestra lista de Productoss:\n" + mostrarProductos);
 }
 
-// Funcion para que el usuario pueda elegir los Productoss a partir de la lista, la cantidad deseada y agregar al carrito
+// Funcion para que el usuario pueda elegir los productos a partir de la lista, la cantidad deseada, el talle de la remera si quiere remera y agregar al carrito
 
 function elegirProductos() {
 
@@ -93,7 +104,7 @@ function elegirProductos() {
   let productoElegido = prompt("Por favor escriba el nombre del producto que le gustaría comprar.");
 
   if (productoElegido === null) {
-    alert("La compra ha sido cancelada.");
+    alert("La compra ha sido cancelada. ¡Agradecemos la visita!");
     break;
   } else{
       // Verificar si el producto elegido esta en el array de stock 
@@ -103,8 +114,14 @@ function elegirProductos() {
      if (productoExiste){
 
       if (productoExiste instanceof Remera) {
-        prompt ("Qué talle de remera quiere comprar?");
+        prompt ("Qué talle de remera quiere comprar? Elija s, m o l.").toLocaleLowerCase();
+        talle = talle.toLowerCase();
+        if (talle === "" || (talle !== "s" && talle !== "m" && talle !== "l")){
+          alert ("Por favor ingrese un talle válido.");
+          continue;
       }
+
+    } 
 
       let cantidadCompra = parseInt (prompt("¿Qué cantidad de productos desea comprar?"));
 
@@ -112,7 +129,9 @@ function elegirProductos() {
 
       if (isNaN(cantidadCompra) || cantidadCompra === ""){
         alert ("Por favor ingrese una cantidad válida");
-      } else if (cantidadCompra <= productoExiste.cantidad){
+      } else if (cantidadCompra > productoExiste.cantidad) {
+        alert ("No hay cantidad suficiente del producto en stock.")
+      } else {
         productoExiste.cantidad -= cantidadCompra;
         productoExiste.calcularSubtotal();
         productoExiste.cantidadCompra = cantidadCompra;
@@ -121,11 +140,9 @@ function elegirProductos() {
 
     const continuar = prompt ("¿Desea seguir agregando productos? Por favor escriba si o no y haga click en aceptar."). toLowerCase();
     if (continuar === "no"){
-      alert ("Procederemos a cerrar su compra.");
+      alert ("Procederemos a cerrar su compra. ¡Gracias por su elección!");
       break;
     }
-      } else {
-        alert ("No hay cantidad suficiente del producto en stock.")
       }
     } else {
       alert ("Por favor ingrese un producto de la lista.")
