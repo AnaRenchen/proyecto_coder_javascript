@@ -163,9 +163,10 @@ function mostrarCarrito () {
    
   let mensajeCarrito = "Este es el detalle de su carrito de compras:\n";
   
+
    carrito.forEach ((producto) => {mensajeCarrito+= ("- Productos: " + producto.nombre + "\n- Cantidad: " + producto.cantidadCompra + "\n- Subtotal: " + producto.subtotal + "\n\n")});
   
-   const total = carrito.reduce ((suma, producto) => suma + producto.subtotal, 0);
+   const total = carrito.reduce ((suma, producto) => suma + (producto.precio * producto.cantidadCompra), 0);
    mensajeCarrito += "- Total: " + total;
   
    alert (mensajeCarrito);
