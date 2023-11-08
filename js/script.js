@@ -109,49 +109,53 @@ function elegirProductos() {
   } else{
       // Verificar si el producto elegido esta en el array de stock 
 
-      productoExiste = stockProductos.find(producto => producto.nombre.toLowerCase() === productoElegido.toLowerCase())
+      productoExiste = stockProductos.find(producto => producto.nombre.toLowerCase() === productoElegido.toLowerCase());
 
-     if (productoExiste){
+      if (productoExiste){
 
-      if (productoExiste instanceof Remera) {
-        prompt ("Qué talle de remera quiere comprar? Elija s, m o l.").toLocaleLowerCase();
-        talle = talle.toLowerCase();
-        if (talle === "" || (talle !== "s" && talle !== "m" && talle !== "l")){
-          alert ("Por favor ingrese un talle válido.");
-          continue;
+        if (productoExiste instanceof Remera) {
+         let talle = prompt ("Qué talle de remera quiere comprar? Elija s, m o l.").toLocaleLowerCase();
+         talle = talle.toLowerCase();
+         while (true){
+          if (talle === "" || (talle !== "s" && talle !== "m" && talle !== "l")){
+            alert ("Por favor ingrese un talle válido.");
+            talle = prompt ("Qué talle de remera quiere comprar? Elija s, m o l.").toLocaleLowerCase();
+          } else {
+            break;
+          }
+        }
+      } 
+  
+        let cantidadCompra = parseInt (prompt("¿Qué cantidad de " + productoElegido + " desea comprar?"));
+  
+        // Asegurarse de que la cantidad sea válida y que se actualice el stock y el subtotal
+  
+        if (isNaN(cantidadCompra) || cantidadCompra === ""){
+          alert ("Por favor ingrese una cantidad válida");
+        } else if (cantidadCompra > productoExiste.cantidad) {
+          alert ("No hay cantidad suficiente de " + productoExiste.nombre + " en stock.")
+        } else {
+          productoExiste.cantidad -= cantidadCompra;
+          productoExiste.calcularSubtotal();
+          productoExiste.cantidadCompra = cantidadCompra;
+          carrito.push(productoExiste);
+      alert("Se agregó " + productoExiste.nombre + " al carrito.");
+      
+  
+      const continuar = prompt ("¿Desea seguir agregando productos? Por favor escriba si o no y haga click en aceptar."). toLowerCase();
+  
+      if (continuar === "no") {
+        alert("Procederemos a cerrar su compra. ¡Gracias por su elección!");
+        break;
       }
-
-    } 
-
-      let cantidadCompra = parseInt (prompt("¿Qué cantidad de productos desea comprar?"));
-
-      // Asegurarse de que la cantidad sea válida y que se actualice el stock y el subtotal
-
-      if (isNaN(cantidadCompra) || cantidadCompra === ""){
-        alert ("Por favor ingrese una cantidad válida");
-      } else if (cantidadCompra > productoExiste.cantidad) {
-        alert ("No hay cantidad suficiente del producto en stock.")
-      } else {
-        productoExiste.cantidad -= cantidadCompra;
-        productoExiste.calcularSubtotal();
-        productoExiste.cantidadCompra = cantidadCompra;
-        carrito.push(productoExiste);
-    alert("Se agregó el producto " + productoExiste.nombre + " al carrito.");
-
-    const continuar = prompt ("¿Desea seguir agregando productos? Por favor escriba si o no y haga click en aceptar."). toLowerCase();
-    if (continuar === "no"){
-      alert ("Procederemos a cerrar su compra. ¡Gracias por su elección!");
-      break;
     }
-      }
     } else {
-      alert ("Por favor ingrese un producto de la lista.")
+      alert("Por favor ingrese un producto de la lista.");
     }
   }
-}
-mostrarCarrito();
-
-}
+  }
+  mostrarCarrito();
+  }
 
 // Funcion para mostrar el carrito de compras con el total de la compra
 
