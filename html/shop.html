@@ -9,7 +9,8 @@
     <link rel="shortcut icon" href="../Photos/logo_header.PNG" type="image/x-icon">
     <title>Shop</title>
     <!-- Vinculo con javascript -->
-    <script defer src="./js/script.js"> </script>
+    <script defer src="../js/productos.js"></script>
+    <script defer src="../js/script.js"> </script>
     <!-- Vinculo con la pagina de bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -27,10 +28,17 @@
 
     <header>
      <!-- Zona Navegable comun para todas las paginas -->
-
-     <nav class="navbar navbar-expand-md bg-santi">
+     <div class = "contenedor_cart">
+      <a href="#cart" id="carrito">
+        <div class="contenedor_carrito">
+          <div id="productos_carrito" class="contar_productos">0</div>
+          <img class="carrito" src="../Photos/cart.png" alt="Carrito de compras" /> 
+      </div></a>
+      
+  </div>
+     <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html"><img src="../Photos/logo_header.PNG" alt=""></a>
+          <a class="navbar-brand" href="../index.html"><img src="../Photos/logo_header.PNG" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,7 +54,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
-                </header>
+                  </ul>
+                </div>
+              </div> 
+            </nav>   
+          </header>
 
                 <main>
                  
@@ -54,335 +66,27 @@
                     <p class="texto_paginas"> ¡Muchas gracias por su compra! </p>
                     <p class="texto_paginas_shop_dolares"> *Los precios de los productos están expresados en dólares. </p>
 
+                    <!-- Ventana Modal-->
+                    <div id="ventana_modal" class="modal">
+                      <div class="contenido_modal">
+                        <div class = "header_modal">
+                          <span class="close">&times;</span>
+                          <h3>Shopping Cart</h3>
+                        </div>
+                        <div class="modal_body"></div>
+                        <div class="modal_footer">
+                        <h4 id="total"></h4>
+                        <a id="finalizar_compra" class="boton_carrito" href="#">Finalizar</a>
+                        <a id="vaciar_carrito" class="boton_carrito" href="#">Vaciar</a>
+                      </div>
+                    </div>
+                    </div>
+
                    <section class="pinturas">
                     <h2 class = "titulo_section_shop"> Paintings </h2>
-                    <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/crisantemos.jpg">
-                            <img src="../Photos/crisantemos.jpg" data-aos="fade-right"  alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Kiku 菊 </p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$200</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                    
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/calavera.jpg">
-                            <img src="../Photos/calavera.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Dakki no Ohyaku 妲己のお百</p>
-                            <p class="texto_imagen"> Original Painting A3 Size </p>
-                            <p class="texto_imagen">Us$380</p>
-                            <button> Agregar al carrito </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/campana.jpg">
-                            <img src="../Photos/campana.jpg"  alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Mongaku Shōnin 文覚 </p>
-                            <p class="texto_imagen"> Original Painting A3 Size </p>
-                            <p class="texto_imagen">Us$108</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/campana_grande.jpg">
-                            <img src="../Photos/campana_grande.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Kiyo Hime 清姫</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$450</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
 
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/dragon.jpg">
-                            <img src="../Photos/dragon.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Unryu 雲龍</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$280</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/fenix.jpg">
-                            <img src="../Photos/fenix.jpg"  alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Hou-oo 鳳凰</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$350</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/gato.jpg">
-                            <img src="../Photos/gato.jpg"  alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen"> Kasha 火車</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$190</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/guardianes.jpg">
-                            <img src="../Photos/guardianes.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Niō (仁王) guardians</p>
-                            <p class="texto_imagen"> Original Painting A3 Size </p>
-                            <p class="texto_imagen">Us$299</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/jiraia.jpg">
-                            <img src="../Photos/jiraia.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Jiraya 自来也</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$300</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/karajishi.jpg">
-                            <img src="../Photos/karajishi.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Karajishi 唐獅子</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$230</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/kingyo.jpg">
-                            <img src="../Photos/kingyo.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Kingyo 金魚</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$290</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/kintaro.jpg">
-                            <img src="../Photos/kintaro.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Yamauba to Kintaro 山姥と金太郎</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$400</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/kintaro_koi.jpg">
-                            <img src="../Photos/kintaro_koi.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Kintaro to Koi 金太郎と鯉</p>
-                            <p class="texto_imagen"> Original Painting A3 Size </p>
-                            <p class="texto_imagen">Us$450</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/kitsune.jpg">
-                            <img src="../Photos/kitsune.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Kitsune 狐</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$250</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/mascara_pelos.jpg">
-                            <img src="../Photos/mascara_pelos.jpg"  alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Kiyohime 清姫</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$380</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/orochimaru.jpg">
-                            <img src="../Photos/orochimaru.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Orochimaru 大蛇丸</p>
-                            <p class="texto_imagen"> Original Painting A3 Size </p>
-                            <p class="texto_imagen">Us$300</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/pajaros.jpg">
-                            <img src="../Photos/pajaros.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Tsuru 鶴</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$200</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/peonias.jpg">
-                            <img src="../Photos/peonias.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Botan 牡丹</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$250</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/samurai_agua.jpg">
-                            <img src="../Photos/samurai_agua.jpg"  alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Danshichi Kurobei 団七九郎兵衛</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$500</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/samurai_espada.jpg">
-                            <img src="../Photos/samurai_espada.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Suimon Yaburi 水門破り</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$450</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/samurai_koi.jpg">
-                            <img src="../Photos/samurai_koi.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Oniwakamaru 鬼若丸</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$500</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/sunade.jpg">
-                            <img src="../Photos/sunade.jpg"  alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Tsunade 綱手</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$300</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/tambor.jpg">
-                            <img src="../Photos/tambor.jpg"  alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Tennin 天人</p>
-                    <p class="texto_imagen"> Original Painting A3 Size </p>
-                    <p class="texto_imagen">Us$300</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/tigre.jpg">
-                            <img src="../Photos/tigre.jpg" alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Tora 虎</p>
-                            <p class="texto_imagen"> Original Painting A3 Size </p>
-                            <p class="texto_imagen">Us$300</p>
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="responsive">
-                        <div class="gallery" data-aos="fade-right">
-                          <a target="_blank" href="../Photos/variado.jpg">
-                            <img src="../Photos/variado.jpg"  alt="Cinque Terre" width="600" height="400">
-                          </a>
-                          <div class="desc">
-                            <p class="texto_imagen">Flash</p>
-                            <p class="texto_imagen"> Original Painting A3 Size </p>
-                            <p class="texto_imagen">Us$270</p> 
-                            <button> Agregar al carrito  </button>
-                        </div>
-                        </div>
-                      </div>
+                    <div id="contenedor_pinturas"></div>
+                    
                     </section>
 
                       <div class="clearfix"></div>
@@ -390,73 +94,12 @@
                       <section class = "souvenirs">
                         <h2 class= "titulo_section_shop"> Souvenirs </h2>
 
-                        <div class="responsive">
-                          <div class="gallery" data-aos="fade-right">
-                            <a target="_blank" href="../Photos/mate.jpg">
-                              <img src="../Photos/mate.jpg" data-aos="fade-right"  alt="Cinque Terre" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                              <p class="texto_imagen"> Mate y Bombilla </p>
-                      <p class="texto_imagen"> + sticker </p>
-                      <p class="texto_imagen">Us$10</p>
-                              <button> Agregar al carrito  </button>
-                          </div>
-                          </div>
-                        </div>
-                        <div class="responsive">
-                          <div class="gallery" data-aos="fade-right">
-                            <a target="_blank" href="../Photos/pulsera.jpg">
-                              <img src="../Photos/pulsera.jpg" data-aos="fade-right"  alt="Cinque Terre" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                              <p class="texto_imagen">Pulsera Nenju</p>
-                      <p class="texto_imagen"> + sticker y postal </p>
-                      <p class="texto_imagen">Us$10</p>
-                              <button> Agregar al carrito  </button>
-                          </div>
-                          </div>
-                        </div>
-                        <div class="responsive">
-                          <div class="gallery" data-aos="fade-right">
-                            <a target="_blank" href="../Photos/remefudo.jpg">
-                              <img src="../Photos/remefudo.jpg" data-aos="fade-right"  alt="Cinque Terre" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                              <p class="texto_imagen">Remera Fudoshin</p>
-                      <p class="texto_imagen"> En talles S, M y L </p>
-                      <p class="texto_imagen">Us$20</p>
-                              <button> Agregar al carrito  </button>
-                          </div>
-                          </div>
-                        </div>
-                        <div class="responsive">
-                          <div class="gallery" data-aos="fade-right">
-                            <a target="_blank" href="../Photos/remetrai.jpg">
-                              <img src="../Photos/remetrai.jpg" data-aos="fade-right"  alt="Cinque Terre" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                              <p class="texto_imagen">Remera Trailokyavijaya</p>
-                      <p class="texto_imagen"> En talles S, M y L</p>
-                      <p class="texto_imagen">Us$20</p>
-                              <button> Agregar al carrito  </button>
-                          </div>
-                          </div>
-                        </div>
-                        <div class="responsive">
-                          <div class="gallery" data-aos="fade-right">
-                            <a target="_blank" href="../Photos/incienso.jpg">
-                              <img src="../Photos/incienso.jpg" data-aos="fade-right"  alt="Cinque Terre" width="600" height="400">
-                            </a>
-                            <div class="desc">
-                              <p class="texto_imagen">Incienso en polvo </p>
-                      <p class="texto_imagen"> Para frotar en las manos </p>
-                      <p class="texto_imagen">Us$2</p>
-                              <button> Agregar al carrito  </button>
-                          </div>
-                          </div>
-                        </div>
-                                              </section>
-                                              <div class="clearfix"></div>
+                       
+                         
+                        <div id="contenedor_souvenirs"></div>
+                      </section>
+                      <div class="clearfix"></div>
+                   
 
                       <div class="flecha_arriba" data-aos="fade-up"
                       data-aos-duration="1000">
