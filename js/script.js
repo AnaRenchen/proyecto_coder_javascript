@@ -10,7 +10,7 @@ const cantidadProductos = document.querySelector(".contar_productos");
 let productosCarrito =[];
 
 
- // Clase para los Productos 
+ // Clase para los productos 
 
  class Producto {
 
@@ -38,7 +38,6 @@ function cargarEventos() {
     renderizarProductosSouvenirs();
     cargarCarritoLS();
     mostrarProductosCarrito();
-
   });
 
   contenedorPinturas.addEventListener("click", agregarProducto);
@@ -68,7 +67,6 @@ function eliminarProductos(event){
     guardarLocalStorage();
     mostrarProductosCarrito();
   }
-
 }
 
 function cargarCarritoLS(){
@@ -94,12 +92,10 @@ function datosProductoAgregado (producto){
   datosProducto.obtenertotal();
   
   agregarCarrito(datosProducto);
-
 }
 
 function agregarCarrito(productoAgregar){
  
-
   const productoExiste = productosCarrito.some((producto) => producto.id === productoAgregar.id);
 
   if(productoExiste){
@@ -112,10 +108,10 @@ function agregarCarrito(productoAgregar){
       } else {
         return producto;
       }
-
      });
 
      productosCarrito = productos;
+
   } else {
     productosCarrito.push(productoAgregar);
   }
@@ -138,7 +134,6 @@ function mostrarProductosCarrito(){
     const div = document.createElement("div");
     div.classList.add("contenedor_producto");
     div.innerHTML = `
-    
     <img src="${imagen}" width="100">
     <p class="texto_imagen">${nombre}</p>
     <p class="texto_imagen">${precio}</p>
@@ -180,11 +175,9 @@ function limpiarHTML(){
   }
 }
 
-
 function ocultarmodal(){
   modal.style.display = "none";
 }
-
 
   const renderizarProductosPinturas = () => {
     productosPinturas.forEach((producto) => {
@@ -199,8 +192,6 @@ function ocultarmodal(){
          <h6 class="texto_imagen">$${producto.precio}</h6>
          <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
          </div>
-    
-        
       `;
       contenedorPinturas.appendChild(card);
     
@@ -221,7 +212,6 @@ function ocultarmodal(){
            <h6 class="texto_imagen">$${producto.precio}</h6>
            <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
            </div>
-      
       `;
       contenedorSouvenirs.appendChild(card);
     
@@ -229,6 +219,8 @@ function ocultarmodal(){
     
       }
     
+  
+     
     
 
 
