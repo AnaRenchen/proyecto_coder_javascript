@@ -22,6 +22,7 @@
             this.mensaje = mensaje;
 
         }
+
     }
 
     const nuevoCliente = new Cliente (nombre, email, numeroCelular, mensaje);
