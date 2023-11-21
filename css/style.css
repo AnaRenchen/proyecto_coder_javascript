@@ -52,6 +52,7 @@
   #carrito{
     text-decoration: none;
   }
+
   .contar_productos {
     background-color:#740001;
     border: 0.1rem solid black;
@@ -95,6 +96,7 @@
   background-color:#740001;
   color: whitesmoke;
   font-family: 'Times New Roman', Times, serif;
+  text-align: center;
 }
 
 .close{
@@ -111,7 +113,7 @@
 
 .contenedor_producto {
   display: flex;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   align-items: center;
   height: 150px;
   background-color: rgb(230, 230, 207);
@@ -527,9 +529,11 @@
   }
 
   #total {
-    font-size: 15px; 
+    font-size: 13px; 
     text-align: center;
+   
   }
+
   .contenedor_producto {
     flex-direction: column;
     height: 300px;
@@ -537,7 +541,7 @@
   }
 
   .boton_carrito{
-    padding: 3px 15px;
+    padding: 3px 10px;
     font-size: 10px;
     margin: 4px 2px;
   }
