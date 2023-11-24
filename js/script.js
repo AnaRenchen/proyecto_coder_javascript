@@ -7,6 +7,9 @@ const botonClose = document.getElementsByClassName("close")[0];
 const containerCart = document.querySelector(".modal_body");
 const contenedorProductos = document.querySelector(".contenedor_carrito");
 const cantidadProductos = document.querySelector(".contar_productos");
+const cerrarBtn = document.getElementById('cerrarBtn');
+const customAlert = document.getElementById('custom-alert');
+const mensaje = document.getElementById('alert-message');
 let productosCarrito =[];
 
 
@@ -95,6 +98,17 @@ function datosProductoAgregado (producto){
 }
 
 function agregarCarrito(productoAgregar){
+
+  const esPintura = productosPinturas.some((pintura) => pintura.id === productoAgregar.id);
+
+  if (esPintura) {
+    const yaEnCarrito = productosCarrito.some((producto) => producto.id === productoAgregar.id);
+
+    if (yaEnCarrito) {
+      mostrarAlerta(mensaje, customAlert);
+      return;
+    }
+  }
  
   const productoExiste = productosCarrito.some((producto) => producto.id === productoAgregar.id);
 
@@ -179,14 +193,14 @@ function ocultarmodal(){
   modal.style.display = "none";
 }
 
-  const renderizarProductosPinturas = () => {
+  function renderizarProductosPinturas () {
     productosPinturas.forEach((producto) => {
       const card = document.createElement ('div');
       card.classList.add ('responsive');
       card.innerHTML =
        `
       <div class="gallery">
-      <img src="../Photos/${producto.img}"  alt="${producto.nombre}" width="600" height="400">
+      <img src="../Photos/${producto.img}" alt="${producto.nombre}" width="600" height="400">
        <p class="texto_imagen"> ${producto.nombre} </p>
         <p class="texto_imagen"> ${producto.descripcion} </p>
          <h6 class="texto_imagen">$${producto.precio}</h6>
@@ -196,10 +210,9 @@ function ocultarmodal(){
       contenedorPinturas.appendChild(card);
     
     });
-  
     }
 
-    const renderizarProductosSouvenirs = () => {
+    function renderizarProductosSouvenirs () {
       productosSouvenirs.forEach((producto) => {
         const card = document.createElement ('div');
         card.classList.add ('responsive');
@@ -216,46 +229,23 @@ function ocultarmodal(){
       contenedorSouvenirs.appendChild(card);
     
     });
-    
       }
-    
-  
-     
-    
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-  
-
-
-
-
-
-
-  
-
-          
-    
       
+      document.addEventListener('DOMContentLoaded', function () {
+      
+        cerrarBtn.addEventListener('click', function () {
+          cerrarAlerta(customAlert);
+        });
+      });
 
-        
-    
-    
+      function mostrarAlerta(mensajeElement, alertElement) {
+        mensajeElement.textContent = '¡Oops, esta pintura ya fue agregada al carrito!';
+        alertElement.style.display = 'block';
+      }
+      
+      function cerrarAlerta(alertElement) {
+        alertElement.style.display = 'none';
+      }
 
-  
-
+     

@@ -5,8 +5,8 @@
 }
 
 .body_color {
-    background-color: #fefdf5!important;
-  }
+  background-color: #fefdf5!important;
+}
 
   /* Estilos del header común a todas las páginas*/
 
@@ -37,6 +37,7 @@
     font-size: 1.3rem;
     margin: 0.8rem;
   }
+
   header .navbar .navbar-nav .nav-link:hover {
     color: #EEBA30;
   }
@@ -45,7 +46,7 @@
 
   .carrito{
     width: 2rem;
-    margin-right: 50px;
+    margin-right: 20px;
     margin-top: 10px;
   }
 
@@ -266,8 +267,6 @@
     letter-spacing: 0.1em;
   }
 
-
-
   .texto_paginas_shop_dolares{
     font-size: 0.8rem;
     font-weight: bolder;
@@ -279,67 +278,10 @@
     letter-spacing: 0.1em;
   }
 
-  /* Estilos del footer común a todas las páginas*/
-
-  .contenedor_footer {
-    background-color: #D3A625;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .logo_footer{
-    width: 5rem;
-    margin-bottom: 20px;;
-  }
-
-  .logo_direccion{
-    width: 5rem;
-  }
-
-  .items_footer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    align-items:center;
-    margin: 50px;
-    line-height: 2rem;
-  }
-
-  .footer_letter {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.3rem;
-    color:black;
-    text-align: center;
-  }
-  footer .footer_letter1 {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 0.8rem;
-    font-weight: bolder;
-    color:black;
-  }
-  footer .footer_letter2 {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 0.8rem;
-    font-weight: bolder;
-    color:black;
-    margin-top: 50px;
-  }
- 
-  footer .logo_insta {
-    width: 40px;
-    margin-bottom: 50px;
-    transition: 0.8s ease-in-out;
-  }
-  footer .logo_insta:hover {
-    transform: scale(1.3);
-    transition: 0.8s;
-  }
 
   /*Galeria de imágenes para la compra de productos*/
 
-  div.gallery {
+  .gallery {
     margin: 0.6rem;
     margin-bottom: 3rem;
     display: flex;
@@ -348,13 +290,13 @@
     text-align: center;
   }
   
-   div.gallery img {
+   .gallery img {
     width: 100%;
     height: auto;
     margin-bottom: 15px;
   }
 
-  div.gallery img:hover {
+  .gallery img:hover {
     border: 2px solid #740001;
   }
 
@@ -377,7 +319,6 @@
   padding: 5px 15px;
   cursor: pointer;
   transition: 0.5s;
- 
   }
 
   .boton_agregar:hover {
@@ -391,9 +332,7 @@
     margin-bottom: 30px;
   }
   
-  * {
-    box-sizing: border-box;
-  }
+ 
   
   .responsive {
     padding: 0 6px;
@@ -422,6 +361,36 @@
     padding: 0.8rem;
   }
 
+  #custom-alert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    padding: 15px;
+    background-color:#740001;
+    color: white;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    width: 40%;
+    border-radius: 5px;
+    border: solid 5px #EEBA30;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: black;
+  }
    /*Formulario de Contacto*/
 
   .formulario {
@@ -471,11 +440,74 @@
     transition: 0.5s;
     margin-top: 15px;
   }
+
   .formulario .button_form button[type=submit]:hover {
     background-color:#740001;
     transition: 0.5s;
     color: #D3A625;
   }
+
+  /* Estilos del footer común a todas las páginas*/
+
+  .contenedor_footer {
+    background-color: #D3A625;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .logo_footer{
+    width: 5rem;
+    margin-bottom: 20px;;
+  }
+
+  .logo_direccion{
+    width: 5rem;
+  }
+
+  .items_footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+    margin: 50px;
+    line-height: 2rem;
+  }
+
+  .footer_letter {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.3rem;
+    color:black;
+    text-align: center;
+  }
+
+  footer .footer_letter1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    color:black;
+  }
+
+  footer .footer_letter2 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    color:black;
+    margin-top: 50px;
+  }
+ 
+  footer .logo_insta {
+    width: 40px;
+    margin-bottom: 50px;
+    transition: 0.8s ease-in-out;
+  }
+
+  footer .logo_insta:hover {
+    transform: scale(1.3);
+    transition: 0.8s;
+  }
+
 
   /* Estilos media query para responsiveness*/
 

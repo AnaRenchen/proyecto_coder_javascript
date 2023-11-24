@@ -66,6 +66,13 @@
                     <p class="texto_paginas"> ¡Muchas gracias por su compra! </p>
                     <p class="texto_paginas_shop_dolares"> *Los precios de los productos están expresados en dólares. </p>
 
+                    <!-- alerta-->
+                    <div id="custom-alert" style="display:none;">
+                      <span class="close-btn" id="cerrarBtn">&times;</span>
+                      <p id="alert-message"></p>
+                    </div>
+
+
                     <!-- Ventana Modal-->
                     <div id="ventana_modal" class="modal">
                       <div class="contenido_modal">
@@ -84,19 +91,13 @@
 
                    <section class="pinturas">
                     <h2 class = "titulo_section_shop"> Paintings </h2>
-                   
-
                     <div id="contenedor_pinturas"></div>
-                    
                     </section>
 
-                      <div class="clearfix"></div>
+                    <div class="clearfix"></div>
 
                       <section class = "souvenirs">
                         <h2 class= "titulo_section_shop"> Souvenirs </h2>
-
-                       
-                         
                         <div id="contenedor_souvenirs"></div>
                       </section>
                       <div class="clearfix"></div>

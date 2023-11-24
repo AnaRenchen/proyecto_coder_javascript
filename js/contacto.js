@@ -1,5 +1,19 @@
  //Formulario de Contacto
 
+ class Cliente {
+
+    static id = 1;
+    
+    constructor (nombre, email, numeroCelular, mensaje){
+        this.id = Cliente.id++;
+        this.nombre = nombre;
+        this.email = email;
+        this.numeroCelular =numeroCelular;
+        this.mensaje = mensaje;
+
+    }
+}
+
  const miFormulario = document.getElementById("miFormulario");
  const clientes = [];
 
@@ -10,20 +24,6 @@
     const numeroCelular = document.getElementById("numero_celular").value;
     const mensaje = document.getElementById("mensaje").value;
     
-    
-    class Cliente {
-
-        static id = 1;
-        constructor (nombre, email, numeroCelular, mensaje){
-            this.id = Cliente.id++;
-            this.nombre = nombre;
-            this.email = email;
-            this.numeroCelular =numeroCelular;
-            this.mensaje = mensaje;
-
-        }
-
-    }
 
     const nuevoCliente = new Cliente (nombre, email, numeroCelular, mensaje);
 
