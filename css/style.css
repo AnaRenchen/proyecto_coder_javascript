@@ -334,8 +334,6 @@
   cursor: pointer;
   transition: 0.5s;
   margin-bottom: 0px;
-  
-  
   }
 
   .boton_agregar:hover {
@@ -351,11 +349,13 @@
 
   .pinturas {
     margin-top: 30px;
+    margin-bottom: 50px;
     border-top: solid #740001;
   }
 
   .souvenirs{
     border-top: solid #740001;
+    margin-bottom: 50px;
   }
 
   .titulo_section_shop{
@@ -561,7 +561,6 @@
   .contenedor_producto {
     flex-direction: column;
     height: 400px;
-    
   }
 
   .boton_carrito{
@@ -569,7 +568,6 @@
     font-size: 15px;
     margin: 4px 2px;
   }
-  
     }
 
    
