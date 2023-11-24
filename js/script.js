@@ -196,16 +196,14 @@ function ocultarmodal(){
   function renderizarProductosPinturas () {
     productosPinturas.forEach((producto) => {
       const card = document.createElement ('div');
-      card.classList.add ('responsive');
+      card.classList.add ('card');
       card.innerHTML =
        `
-      <div class="gallery">
-      <img src="../Photos/${producto.img}" alt="${producto.nombre}" width="600" height="400">
+      <img src="../Photos/${producto.img}" alt="${producto.nombre}">
        <p class="texto_imagen"> ${producto.nombre} </p>
         <p class="texto_imagen"> ${producto.descripcion} </p>
          <h6 class="texto_imagen">$${producto.precio}</h6>
          <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
-         </div>
       `;
       contenedorPinturas.appendChild(card);
     
@@ -215,16 +213,14 @@ function ocultarmodal(){
     function renderizarProductosSouvenirs () {
       productosSouvenirs.forEach((producto) => {
         const card = document.createElement ('div');
-        card.classList.add ('responsive');
+        card.classList.add ('card');
         card.innerHTML =
       `
-      <div class="gallery">
-        <img src="../Photos/${producto.img}"  alt="${producto.nombre}" width="600" height="400">
+        <img src="../Photos/${producto.img}"  alt="${producto.nombre}">
          <p class="texto_imagen"> ${producto.nombre} </p>
           <p class="texto_imagen"> ${producto.descripcion} </p>
            <h6 class="texto_imagen">$${producto.precio}</h6>
            <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
-           </div>
       `;
       contenedorSouvenirs.appendChild(card);
     

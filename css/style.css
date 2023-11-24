@@ -281,30 +281,44 @@
 
   /*Galeria de imágenes para la compra de productos*/
 
-  .gallery {
-    margin: 0.6rem;
-    margin-bottom: 3rem;
+   #contenedor_pinturas {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
-    text-align: center;
+    margin: auto;
   }
   
-   .gallery img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
+  #contenedor_souvenirs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
   }
 
-  .gallery img:hover {
+   .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card img:hover {
     border: 2px solid #740001;
   }
 
+  .card {
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
   .texto_imagen {
+    margin-top: 10px;
+    font-size: 1rem;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
     line-height: 18px;
+    color: black;
   }
 
   .boton_agregar{
@@ -319,6 +333,9 @@
   padding: 5px 15px;
   cursor: pointer;
   transition: 0.5s;
+  margin-bottom: 0px;
+  
+  
   }
 
   .boton_agregar:hover {
@@ -330,14 +347,6 @@
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
-  }
-  
- 
-  
-  .responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
   }
 
   .pinturas {
@@ -361,9 +370,12 @@
     padding: 0.8rem;
   }
 
+  
+/*Alerta para compras de más de 1 pintura*/
+
   #custom-alert {
     display: none;
-    position: fixed;
+    position:fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -378,6 +390,7 @@
     border-radius: 5px;
     border: solid 5px #EEBA30;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
   }
   
   .close-btn {
@@ -522,28 +535,7 @@
     }
 
   }
-  
-  @media only screen and (max-width: 700px) {
-  
-    .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
-    }
-    
-  }
-  
-  @media only screen and (max-width: 500px) {
-    .responsive {
-      width: 100%;
 
-    }
-  }
-  
-  .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
 
   @media only screen and (max-device-width: 1366px) {
     .parallax {
