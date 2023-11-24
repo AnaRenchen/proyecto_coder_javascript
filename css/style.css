@@ -545,7 +545,7 @@
     
 @media screen and (max-width: 600px) {
   .contenido_modal {
-    width: 80%; 
+    width: 100%; 
   }
 
   .header_modal {
@@ -553,20 +553,20 @@
   }
 
   #total {
-    font-size: 13px; 
+    font-size: 17px; 
     text-align: center;
    
   }
 
   .contenedor_producto {
     flex-direction: column;
-    height: 300px;
+    height: 400px;
     
   }
 
   .boton_carrito{
     padding: 3px 10px;
-    font-size: 10px;
+    font-size: 15px;
     margin: 4px 2px;
   }
   
