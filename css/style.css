@@ -123,18 +123,15 @@
 
 .eliminar_producto {
   text-decoration: none;
-  border-style: solid;
-  border-width: 1.5px;
-  border-color: black;
   padding: 3px;
   color: black;
   transition: 0.5s;
-  font-size: 12px;
+  font-size: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 .eliminar_producto:hover {
@@ -338,6 +335,7 @@
 
   .boton_agregar:hover {
     background-color:#D3A625;
+    padding: 8px;
     transition: 0.5s;
   }
 
@@ -370,40 +368,6 @@
     padding: 0.8rem;
   }
 
-  
-/*Alerta para compras de más de 1 pintura*/
-
-  #custom-alert {
-    display: none;
-    position:fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
-    padding: 15px;
-    background-color:#740001;
-    color: white;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    width: 40%;
-    border-radius: 5px;
-    border: solid 5px #EEBA30;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 2px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .close-btn:hover {
-    color: black;
-  }
    /*Formulario de Contacto*/
 
   .formulario {

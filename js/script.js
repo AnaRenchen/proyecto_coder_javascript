@@ -105,7 +105,8 @@ function agregarCarrito(productoAgregar){
     const yaEnCarrito = productosCarrito.some((producto) => producto.id === productoAgregar.id);
 
     if (yaEnCarrito) {
-      mostrarAlerta(mensaje, customAlert);
+     
+     alertaPinturasCarrito()
       return;
     }
   }
@@ -154,6 +155,7 @@ function mostrarProductosCarrito(){
     <p class="texto_imagen">${cantidad}</p>
     <p class="texto_imagen">${subtotal}</p>
     <a href="#" class ="eliminar_producto" id="${id}"> X </a>
+
     `
 containerCart.appendChild(div);
   });
@@ -161,6 +163,7 @@ containerCart.appendChild(div);
   mostrarCantidadProductos();
   calculartotal();
 }
+
 
 function calculartotal(){
   let total = productosCarrito.reduce((sumaTotal, producto) => sumaTotal + producto.subtotal, 0);
@@ -227,21 +230,28 @@ function ocultarmodal(){
     });
       }
 
-      
-      document.addEventListener('DOMContentLoaded', function () {
-      
-        cerrarBtn.addEventListener('click', function () {
-          cerrarAlerta(customAlert);
+
+      function alertaPinturasCarrito(){
+        Swal.fire({
+          title: "¡Oops, esta pintura ya fue agregada al carrito!",
+          color: 'white',
+          toast: "true",
+          background: "#740001",
+          confirmButtonText: "Entendido",
+          confirmButtonColor: "#D3A625",
+          showClass: {
+            popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `
+          },
+          hideClass: {
+            popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `
+          }
         });
-      });
-
-      function mostrarAlerta(mensajeElement, alertElement) {
-        mensajeElement.textContent = '¡Oops, esta pintura ya fue agregada al carrito!';
-        alertElement.style.display = 'block';
-      }
-      
-      function cerrarAlerta(alertElement) {
-        alertElement.style.display = 'none';
-      }
-
-     
+    }
