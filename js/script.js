@@ -66,11 +66,23 @@ function eliminarProductos(event){
   if(event.target.classList.contains("eliminar_producto")){
     const productoID = parseInt(event.target.getAttribute("id"));
 
-    productosCarrito = productosCarrito.filter((producto) => producto.id !== productoID);
+    productosCarrito = productosCarrito.filter((producto) => {
+      if (producto.id === productoID) {
+        if (producto.cantidad > 1) {
+          producto.cantidad -= 1;
+          producto.subtotal = producto.precio * producto.cantidad;
+          return true;
+        } return false;
+      }  return true;
+    });
+  }
+
+    /*productosCarrito = productosCarrito.filter((producto) => producto.id !== productoID);*/
+    
     guardarLocalStorage();
     mostrarProductosCarrito();
   }
-}
+
 
 function cargarCarritoLS(){
   productosCarrito = JSON.parse(localStorage.getItem("productosLS")) || [];
