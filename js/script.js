@@ -76,9 +76,6 @@ function eliminarProductos(event){
       }  return true;
     });
   }
-
-    /*productosCarrito = productosCarrito.filter((producto) => producto.id !== productoID);*/
-    
     guardarLocalStorage();
     mostrarProductosCarrito();
   }
