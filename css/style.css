@@ -537,7 +537,7 @@
 
      /* Estilos formulario para finalizar compra*/
 
-    #formfinalizar_compra{
+     #formfinalizar_compra{
       display: none;
       position: fixed;
       top: 50%;
@@ -549,7 +549,6 @@
       max-height: 100vh;
       overflow: auto;
       background-color: rgba(0, 0, 0, 0.4);
-      
     }
 
     #formfinalizar_compra input[type="text"]  {
@@ -570,8 +569,8 @@
     .container_fincompra{
       overflow: auto;
       margin:auto;
-      width:90%;
-      max-width:600px;
+      width:100%;
+      max-width:500px;
       max-height: 100%;
       color:black;
       font-family: 'Times New Roman', Times, serif;
@@ -586,7 +585,6 @@
       grid-auto-columns:100%;
       transform: var(--transform);
       transition: var(--transition);
-      
     }
 
     .fincompra_titulo{
