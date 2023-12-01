@@ -385,6 +385,8 @@
     justify-content: center;
     align-content: center;
   }
+
+
   .formulario input, .formulario textarea {
     background-color:beige;
     padding: 10px;
@@ -400,7 +402,6 @@
     font-family: "Times New Roman", Times, serif;
     color: black;
     font-size: 1.3rem;
-    
   }
   
   .formulario .button_form button[type=submit] {
@@ -533,6 +534,157 @@
     margin: 4px 2px;
   }
     }
+
+     /* Estilos formulario para finalizar compra*/
+
+    #formfinalizar_compra{
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      width: 100%;
+      z-index: 1;
+      max-height: 100vh;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      
+    }
+
+    #formfinalizar_compra input[type="text"]  {
+      background-color:beige;
+      width: 100%;
+      padding: 2px;
+      display: block;
+      border: 1.3px solid #740001;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+  
+    #formfinalizar_compra label {
+      justify-self: center;
+      font-family: "Times New Roman", Times, serif;
+      color: black;
+    }
+    .container_fincompra{
+      overflow: auto;
+      margin:auto;
+      width:90%;
+      max-width:500px;
+      max-height: 100%;
+      color:black;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.2rem;
+      background-color: #D3A625;
+      border: 5px solid black;;
+      border-radius: 6px;
+      padding: 0.5em 0.6em 1.4em 0.6em;
+      display:grid;
+      gap:0.5em;
+      place-items:center;
+      grid-auto-columns:100%;
+      transform: var(--transform);
+      transition: var(--transition);
+      
+    }
+
+    .fincompra_titulo{
+    display:flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    color: black;
+    font-size: 1rem;
+    }
+
+    .titulo_fincompra{
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 600;
+    }
+
+    .datos_persona_fincompra{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    width:90%;
+    max-width:500px;
+    border:2px solid black;
+    padding:0.5em 1.5em;
+    border-radius: 6px;
+    }
+
+    .subtitulos_form_compra{
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+
+    }
+
+    .importe_pago{
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .fincompra_datospago {
+      display:flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: center;
+      width:90%;
+      max-width:500px;
+      border:2px solid black;
+      padding:0.5em 1em;
+      border-radius: 6px;
+    }
+
+    #close_fincompra{
+      margin-top:0em;
+      text-decoration: none;
+      margin-left:0.5em;
+      color:white;
+      background-color:#740001;
+      padding: 0.2em 0.5em;
+      font-weight: 500;
+      transition: background-color .3s;
+  }
+  
+
+  #finalizar_pago{
+    margin: 0 auto; 
+    display: block;
+    margin-top:1em;
+    margin-bottom: 1rem;
+    padding: 8px 18px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #740001;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+
+    
+}
+#finalizar_pago:hover {
+  background-color: #740001;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+ 
+#totalPago {
+  text-align: center;
+  margin: 8px auto;
+  font-size: 1.5rem;
+  border: solid 1px black;
+  width: 60%;
+  background-color:rgb(240, 215, 146);
+}
+
 
    
 

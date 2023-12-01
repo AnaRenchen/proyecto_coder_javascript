@@ -23,19 +23,34 @@
     const email = document.getElementById("email").value;
     const numeroCelular = document.getElementById("numero_celular").value;
     const mensaje = document.getElementById("mensaje").value;
-    
 
     const nuevoCliente = new Cliente (nombre, email, numeroCelular, mensaje);
 
+    // Verifica si los campos están completos
+    if (nombre === "" || email === "" || numeroCelular == "" || mensaje == "") {
+        Swal.fire({
+          text: "Por favor complete todos los campos del formulario",
+          color: 'white',
+                toast: "true",
+                background: "#740001",
+                confirmButtonText: "Ok",
+                confirmButtonColor: "#D3A625",
+                timer: 3000,
+        });
+      } else {
 
     clientes.push(nuevoCliente);
 
-    console.log(nuevoCliente);
-
-    console.log (clientes);
-
     miFormulario.reset();
 
-    console.log('Evento submit.');
-
+    Swal.fire({
+        imageUrl: "../Photos/gato_negro.png",
+        title: '¡Formulario enviado!',
+        text: 'En breve enviaremos una respuesta.',
+        color: "black",
+        background: "#D3A625",
+        confirmButtonColor: "#740001",
+        timer: 5000,
+    });
+}
   });

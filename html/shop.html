@@ -11,7 +11,7 @@
      <!-- Vinculo con Sweet Alert -->
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Vinculo con javascript -->
-    <script defer src="../js/productos.js"></script>
+    <!--<script defer src="../js/productos.js"></script>-->
     <script defer src="../js/script.js"> </script>
     <!-- Vinculo con la pagina de bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -68,14 +68,7 @@
                     <p class="texto_paginas"> ¡Muchas gracias por su compra! </p>
                     <p class="texto_paginas_shop_dolares"> *Los precios de los productos están expresados en dólares. </p>
 
-                    <!-- alerta-->
-                    <div id="custom-alert" style="display:none;">
-                      <span class="close-btn" id="cerrarBtn">&times;</span>
-                      <p id="alert-message"></p>
-                    </div>
-
-
-                    <!-- Ventana Modal-->
+                    <!-- Ventana Modal Carrito -->
                     <div id="ventana_modal" class="modal">
                       <div class="contenido_modal">
                         <div class = "header_modal">
@@ -90,6 +83,57 @@
                       </div>
                     </div>
                     </div>
+
+                 <!-- Ventana Modal Formulario Fin de Compra-->
+                 
+                 <form id="formfinalizar_compra" autocomplete="off">
+                  <div class="container_fincompra">
+                    <div class="fincompra_titulo">
+                      <h3 class="titulo_fincompra"> Finalizar Compra </h3>
+                      <a id="close_fincompra" class="close_fincompra" href="#">X</a>
+                    </div>
+                    <div class="datos_persona_fincompra">
+                      <h3 class="subtitulos_form_compra"> Por favor ingrese sus datos </h3>
+                    <label for="nombre">Nombre y Apellido</label>
+                    <input id="nombre" type="text" placeholder="Nombre y Apellido" class="input-style">
+                    <label for="email">E-Mail</label>
+                    <input id="email" type="text" placeholder="@ejemplo.com" class="input-style">
+                    <label for="domicilio">Domicilio</label>
+                    <input id="domicilio" type="text" placeholder="Calle - Nro - Barrio" class="input-style">
+                    <label for="ciudad">Ciudad</label>
+                    <input id="ciudad" type="text" placeholder="Ciudad" class="input-style">
+                    <label for="pais">Pais</label>
+                    <input id="pais" type="text" placeholder="Pais" class="input-style">
+                    <label for="postal">Código Postal</label>
+                    <input id="postal" type="text" placeholder="Código Postal" class="input-style">
+                    </div>
+                    <div class="fincompra_datospago">
+                      <h3 class="subtitulos_form_compra"> Métodos de Pago </h3>
+                      <div class="formas_pago">
+                        <input type="radio" id="tarjetaCredito" name="formaPago" value="tarjetaCredito">
+                        <label for="tarjetaCredito">Tarjeta de Crédito</label>
+                    </div>
+                    <div class="forma-pago">
+                        <input type="radio" id="paypal" name="formaPago" value="paypal">
+                        <label for="paypal">PayPal</label>
+                    </div>
+                    <div class="forma-pago">
+                        <input type="radio" id="transferenciaBancaria" name="formaPago" value="transferenciaBancaria">
+                        <label for="transferenciaBancaria">Transferencia Bancaria</label>
+                    </div>
+                        <p class= "importe_pago"> Importe a pagar: </p>
+                        <div id="totalPago"></div>
+                      
+                        <div class="fincompra_footer">
+                          <button type="submit" id="finalizar_pago" >Realizar el Pago</button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+
+
 
                    <section class="pinturas">
                     <h2 class = "titulo_section_shop"> Paintings </h2>

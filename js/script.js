@@ -1,3 +1,5 @@
+const filePinturas = '../data/productos_pinturas.json';
+const fileSouvenirs = '../data/productos_souvenirs.json';
 const contenedorPinturas = document.getElementById("contenedor_pinturas");
 const contenedorSouvenirs = document.getElementById("contenedor_souvenirs");
 const modal = document.getElementById("ventana_modal");
@@ -8,9 +10,14 @@ const containerCart = document.querySelector(".modal_body");
 const contenedorProductos = document.querySelector(".contenedor_carrito");
 const cantidadProductos = document.querySelector(".contar_productos");
 const cerrarBtn = document.getElementById('cerrarBtn');
-const customAlert = document.getElementById('custom-alert');
-const mensaje = document.getElementById('alert-message');
+const vaciarCarrito = document.getElementById("vaciar_carrito")
+const finalizarCompra = document.querySelector('#finalizar_compra');
+const formFinCompra = document.getElementById('formfinalizar_compra');
+const closeCompra = document.getElementById ("close_fincompra");
+const totalPago = document.getElementById("totalPago");
 let productosCarrito =[];
+let productosPinturas = [];
+let productosSouvenirs = [];
 
 
  // Clase para los productos 
@@ -41,25 +48,115 @@ function cargarEventos() {
     renderizarProductosSouvenirs();
     cargarCarritoLS();
     mostrarProductosCarrito();
+    agregarTotal();
+    
   });
 
   contenedorPinturas.addEventListener("click", agregarProducto);
   contenedorSouvenirs.addEventListener("click", agregarProducto);
   containerCart.addEventListener("click", eliminarProductos);
+  formFinCompra.addEventListener('submit', compraRealizada);
+  vaciarCarrito.addEventListener('click', limpiarCarrito);
 
 carrito.onclick = function () {
   modal.style.display ="block";
 };
 
 botonClose.onclick = function () {
-  ocultarmodal();
+  ocultarModal();
 };
+
 
 window.onclick = function (event){
   if (event.target == modal){
-    ocultarmodal();
-  }
+    ocultarModal();
+  } else if (event.target == formFinCompra) {
+    ocultarFormFinCompra();
 };
+
+finalizarCompra.onclick = function (){
+  if (productosCarrito.length > 0){
+  formFinCompra.style.display = 'block';
+  modal.style.display = 'none';
+ 
+  } else {
+    Swal.fire({
+      text: "Primero tiene que elegir productos! :)",
+      color: 'white',
+            toast: "true",
+            background: "#740001",
+            confirmButtonText: "Ahora mismo!",
+            confirmButtonColor: "#D3A625",
+            timer: 3000,
+  });
+}
+};
+
+closeCompra.onclick = function (){
+  ocultarFormFinCompra();
+  };
+
+}
+}
+
+function limpiarCarrito() {
+
+  if (productosCarrito.length > 0){
+
+  Swal.fire({
+      title: 'Vaciar Carrito de Compras',
+      text: '¿Está seguro que desea vaciar el carrito de compras?',
+      color: "black",
+      imageUrl: "../Photos/cat.png",
+      iconColor: "black",
+      showCancelButton: true,
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: "green",
+      cancelButtonColor: "red",
+      background: "#D3A625",
+  }).then((btnResponse) => {
+      if (btnResponse.isConfirmed) {
+          Swal.fire({
+              title: 'Carrito vacío',
+              color: "black",
+              icon: 'success',
+              iconColor: "black",
+              background: "#D3A625",
+              text: 'Ya no hay productos en su carrito de compras.',
+              confirmButtonColor: "#740001",
+              confirmButtonText: "Ok",
+              timer: 5000,
+          });
+          eliminarLocalStorage();
+          cargarCarritoLS();
+          mostrarProductosCarrito();
+          ocultarModal();
+      } else {
+          Swal.fire({
+              title: 'Operación cancelada',
+              icon: 'info',
+              iconColor:"black",
+              text: 'La operación de vaciar el carrito de compras fue cancelada.',
+              color: "black",
+              background: "#D3A625",
+              confirmButtonColor: "#740001",
+              confirmButtonText: "Ok",
+              timer: 5000,
+          });
+      }
+  });
+} else {
+  Swal.fire({
+    text: "Su carrito ya está vacío :)",
+    color: 'white',
+          toast: "true",
+          background: "#740001",
+          confirmButtonText: "Es verdad!",
+          confirmButtonColor: "#D3A625",
+          timer: 3000,
+  });
+}
 }
 
 function eliminarProductos(event){
@@ -70,10 +167,14 @@ function eliminarProductos(event){
       if (producto.id === productoID) {
         if (producto.cantidad > 1) {
           producto.cantidad -= 1;
-          producto.subtotal = producto.precio * producto.cantidad;
+          producto.obtenertotal();
           return true;
-        } return false;
-      }  return true;
+        } else {
+          return false;
+        }
+      }  else{
+      return true;
+      }
     });
   }
     guardarLocalStorage();
@@ -139,13 +240,16 @@ function agregarCarrito(productoAgregar){
   } else {
     productosCarrito.push(productoAgregar);
   }
- console.log (productosCarrito);
  guardarLocalStorage();
  mostrarProductosCarrito();
 }
 
 function guardarLocalStorage(){
   localStorage.setItem("productosLS", JSON.stringify(productosCarrito));
+}
+
+function eliminarLocalStorage() {
+  localStorage.removeItem('productosLS');
 }
 
 function mostrarProductosCarrito(){
@@ -164,7 +268,6 @@ function mostrarProductosCarrito(){
     <p class="texto_imagen">${cantidad}</p>
     <p class="texto_imagen">${subtotal}</p>
     <a href="#" class ="eliminar_producto" id="${id}"> X </a>
-
     `
 containerCart.appendChild(div);
   });
@@ -176,8 +279,9 @@ containerCart.appendChild(div);
 
 function calculartotal(){
   let total = productosCarrito.reduce((sumaTotal, producto) => sumaTotal + producto.subtotal, 0);
-
+  
   totalCarrito.innerHTML = `Total de la compra: $${total} `;
+  return total;
 }
 
 function mostrarCantidadProductos(){
@@ -201,12 +305,15 @@ function limpiarHTML(){
   }
 }
 
-function ocultarmodal(){
+function ocultarModal(){
   modal.style.display = "none";
 }
 
-  function renderizarProductosPinturas () {
-    productosPinturas.forEach((producto) => {
+ async function renderizarProductosPinturas () {
+
+ productosPinturas = await (realizarPeticion(filePinturas));
+
+      productosPinturas.forEach((producto) => {
       const card = document.createElement ('div');
       card.classList.add ('card');
       card.innerHTML =
@@ -222,8 +329,11 @@ function ocultarmodal(){
     });
     }
 
-    function renderizarProductosSouvenirs () {
-      productosSouvenirs.forEach((producto) => {
+    async function renderizarProductosSouvenirs () {
+
+       productosSouvenirs = await (realizarPeticion(fileSouvenirs));
+
+        productosSouvenirs.forEach((producto) => {
         const card = document.createElement ('div');
         card.classList.add ('card');
         card.innerHTML =
@@ -235,10 +345,25 @@ function ocultarmodal(){
            <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
       `;
       contenedorSouvenirs.appendChild(card);
-    
     });
       }
 
+      async function realizarPeticion(datos) {
+        try {
+            const response = await fetch(datos);
+    
+            if (!response.ok) {
+                throw new Error(`Error en la petición: ${response.status} ${response.statusText}`);
+            }
+    
+            const data = await response.json();
+    
+            return data;
+        } catch (error) {
+            
+            console.error(error);
+        }
+    }
 
       function alertaPinturasCarrito(){
         Swal.fire({
@@ -264,3 +389,80 @@ function ocultarmodal(){
           }
         });
     }
+
+    function ocultarFormFinCompra () {
+      formFinCompra.style.display = 'none';
+    }
+
+   function compraRealizada (e){
+    e.preventDefault();
+     
+      const nombre = document.getElementById("nombre").value;
+      const email = document.getElementById("email").value;
+      const domicilio = document.getElementById("domicilio").value;
+      const ciudad = document.getElementById("ciudad").value;
+      const pais = document.getElementById("pais").value;
+      const postal = document.getElementById("postal").value;
+      const opcionesPago = document.getElementsByName("formaPago");
+
+      
+  let opcionSeleccionada = false;
+  for (let i = 0; i < opcionesPago.length; i++) {
+    if (opcionesPago[i].checked) {
+      opcionSeleccionada = true;
+      break;
+    }
+  }
+      
+    // Verifica si los campos están completos
+    if (nombre === "" || email === "" || domicilio == "" || ciudad == "" || pais == "" || postal == "" || !opcionSeleccionada) {
+      Swal.fire({
+        text: "Por favor complete todos los campos del formulario",
+        color: 'white',
+              toast: "true",
+              background: "#740001",
+              confirmButtonText: "Ok",
+              confirmButtonColor: "#D3A625",
+              timer: 3000,
+      });
+    } else {
+      formFinCompra.reset();
+      Swal.fire({
+          imageUrl: "../Photos/gueixa.png",
+          title: '¡Muchas gracias por su compra!',
+          text: 'Entraremos en contacto en los próximos días para coordinar el envío.',
+          color: "black",
+          background: "#D3A625",
+          confirmButtonColor: "#740001",
+      });
+      eliminarLocalStorage();
+      cargarCarritoLS();
+      mostrarProductosCarrito();
+      ocultarFormFinCompra();
+      
+
+    totalPago = document.getElementById("totalPago");
+    totalPago.innerHTML = ''; 
+    agregarTotal(); 
+    }
+  };
+   
+  function agregarTotal() {
+    const total = calculartotal(); 
+    const totalPago = document.getElementById("totalPago");
+    const span = document.createElement("span");
+    span.classList.add("importe_totalapagar");
+    span.textContent = `$${total}`;
+  
+    totalPago.appendChild(span);
+  }
+  
+ 
+ 
+ 
+   
+
+    
+
+  
+    

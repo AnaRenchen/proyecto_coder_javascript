@@ -239,7 +239,7 @@ const productosSouvenirs = [
         nombre: "Incienso en polvo",
         precio: 280,
         img: 'incienso_polvo.jpeg',
-        stock: 20,
+        stock: 2,
         descripcion: "para frotar en las manos"
     }
 ]
