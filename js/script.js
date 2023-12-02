@@ -264,9 +264,9 @@ function mostrarProductosCarrito(){
     div.innerHTML = `
     <img src="${imagen}" width="100">
     <p class="texto_imagen">${nombre}</p>
-    <p class="texto_imagen">${precio}</p>
+    <p class="texto_imagen">$${precio}</p>
     <p class="texto_imagen">${cantidad}</p>
-    <p class="texto_imagen">${subtotal}</p>
+    <p class="texto_imagen">$${subtotal}</p>
     <a href="#" class ="eliminar_producto" id="${id}"> X </a>
     `
 containerCart.appendChild(div);

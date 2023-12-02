@@ -46,7 +46,7 @@
     Swal.fire({
         imageUrl: "../Photos/gato_negro.png",
         title: '¡Formulario enviado!',
-        text: 'En breve enviaremos una respuesta.',
+        text: 'Le contactaremos a la brevedad.',
         color: "black",
         background: "#D3A625",
         confirmButtonColor: "#740001",
