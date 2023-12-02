@@ -69,6 +69,15 @@
 }
 
 /* Modal con el carrito de compras*/
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 .modal {
   display: flex;
   position: fixed;
@@ -78,6 +87,7 @@
   width: 100%;
   height: 100%;
   overflow: auto;
+  animation: slideInFromTop 0.5s ease-in-out; 
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -91,6 +101,7 @@
   max-height: 80%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 
 .header_modal {
   padding: 2px 16px;
@@ -549,6 +560,7 @@
       padding-top: 50px;
       overflow: auto;
       background-color: rgba(0, 0, 0, 0.4);
+      
     }
 
     #formfinalizar_compra input[type="text"]  {
@@ -682,6 +694,13 @@
   background-color:rgb(240, 215, 146);
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+#formfinalizar_compra {
+  animation: fadeIn 0.5s ease-in-out;
+}
 
    
 
