@@ -572,6 +572,10 @@
       border-radius: 5px;
       box-sizing: border-box;
     }
+
+    #formfinalizar_compra input[type="text"].focus{
+      border:1.3px solid #D3A625;
+    }
   
     #formfinalizar_compra label {
       justify-self: center;
