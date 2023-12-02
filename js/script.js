@@ -435,15 +435,12 @@ function ocultarModal(){
           background: "#D3A625",
           confirmButtonColor: "#740001",
       });
+      totalPago.innerHTML = ''; 
       eliminarLocalStorage();
       cargarCarritoLS();
       mostrarProductosCarrito();
       ocultarFormFinCompra();
-      
-
-    totalPago = document.getElementById("totalPago");
-    totalPago.innerHTML = ''; 
-    agregarTotal(); 
+      agregarTotal(); 
     }
   };
    

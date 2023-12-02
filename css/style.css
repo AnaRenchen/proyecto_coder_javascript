@@ -201,6 +201,25 @@
     background-color: #fefdf5;
   }
  
+  .parallax2 {
+    background-image: url('../Photos/karajishi_portada.jpg');
+    height: 50%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .parallax_portada2{
+    border:solid 3px #740001;
+    background-color: #fefdf5;
+  }
+
+  .medio_parallax{
+    height: 200px;
+    background-color: #666;
+  }
+
   .titulo_portada{
     color: black;
     font-size: 3rem;
