@@ -67,7 +67,10 @@
                     <h1 class="titulos_paginas animate__animated animate__zoomIn" id="shop_link"> Shop </h1>
                     <p class="texto_paginas"> ¡Muchas gracias por su compra! </p>
                     <p class="texto_paginas_shop_dolares"> *Los precios de los productos están expresados en dólares. </p>
-
+                    <div class="contenedor_filtro">
+                    <input type="text" class="search_input" id="filtro_input" placeholder="Buscar producto...">
+                    <button id="filtro_btn" class="boton_filtro"> Filtrar </button>
+                    </div>
                     <!-- Ventana Modal Carrito -->
                     <div id="ventana_modal" class="modal">
                       <div class="contenido_modal">
@@ -132,15 +135,10 @@
                   </div>
                 </form>
 
-
-
-
                    <section class="pinturas">
                     <h2 class = "titulo_section_shop"> Paintings </h2>
                     <div id="contenedor_pinturas"></div>
                     </section>
-
-                   
 
                       <section class = "souvenirs">
                         <h2 class= "titulo_section_shop"> Souvenirs </h2>
@@ -148,7 +146,6 @@
                       </section>
                       
                    
-
                       <div class="flecha_arriba" data-aos="fade-up" data-aos-duration="1000">
                         <a href="#shop_link"><img class="flecha"  src="../Photos/up.png" alt="flecha hacia arriba"></a>
                         </div>

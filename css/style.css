@@ -725,10 +725,42 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
-   
+ .contenedor_filtro{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ } 
 
-       
-  
+ .search_input{
+  background-color: beige;
+  border: solid 1.5px #740001;
+  margin: 0.5rem;
+  padding: 8px 16px 8px 16px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 300px;
+ }
+
+ .boton_filtro{
+  background-color:#EEBA30;
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+  color: black;
+  font-weight: 600;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  margin: 8px 6px;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: background-color 0.3s ease-in-out;
+
+ }
+ .boton_filtro:hover{
+  background-color:#ddd;
+ }
+   
+ 
  
   
 

@@ -15,6 +15,8 @@ const finalizarCompra = document.querySelector('#finalizar_compra');
 const formFinCompra = document.getElementById('formfinalizar_compra');
 const closeCompra = document.getElementById ("close_fincompra");
 const totalPago = document.getElementById("totalPago");
+const inputFiltrar = document.querySelector("#filtro_input");
+const botonFiltrar = document.querySelector("#filtro_btn");
 let productosCarrito =[];
 let productosPinturas = [];
 let productosSouvenirs = [];
@@ -55,8 +57,9 @@ function cargarEventos() {
   contenedorPinturas.addEventListener("click", agregarProducto);
   contenedorSouvenirs.addEventListener("click", agregarProducto);
   containerCart.addEventListener("click", eliminarProductos);
-  formFinCompra.addEventListener('submit', compraRealizada);
-  vaciarCarrito.addEventListener('click', limpiarCarrito);
+  formFinCompra.addEventListener("submit", compraRealizada);
+  vaciarCarrito.addEventListener("click", limpiarCarrito);
+  botonFiltrar.addEventListener("click", filtrarProductos);
 
 carrito.onclick = function () {
   modal.style.display ="block";
@@ -95,14 +98,102 @@ finalizarCompra.onclick = function (){
 closeCompra.onclick = function (){
   ocultarFormFinCompra();
   };
+}
+}
 
+async function filtrarProductos () {
+  const productosPinturas = await realizarPeticion(filePinturas);
+  const productosSouvenirs = await realizarPeticion(fileSouvenirs);
+  const productos = [...productosPinturas, ...productosSouvenirs];
+  
+  let productosFiltrados, filtro;
+
+  filtro = inputFiltrar.value.toLowerCase();
+
+  productosFiltrados = productos.filter((producto) => producto.nombre.toLowerCase().includes(filtro));
+
+  limpiarContenedorPinturas();
+  limpiarContenedorSouvenirs();
+
+  if (productosFiltrados.length > 0) {
+    const pinturasFiltradas = productosFiltrados.filter((producto) => productosPinturas.includes(producto));
+    const souvenirsFiltrados = productosFiltrados.filter((producto) => productosSouvenirs.includes(producto));
+
+    if (pinturasFiltradas.length > 0) {
+      recorrerArregloPinturas(pinturasFiltradas);
+    }
+
+    if (souvenirsFiltrados.length > 0) {
+      recorrerArregloSouvenirs(souvenirsFiltrados);
+    }
+    
+  } else {
+    Swal.fire({
+      text: "No se encontraron productos.",
+      color: 'white',
+            toast: "true",
+            background: "#740001",
+            confirmButtonText: "Ok",
+            confirmButtonColor: "#D3A625",
+            timer: 3000,
+    });
+    limpiarContenedorPinturas();
+    limpiarContenedorSouvenirs();
+    recorrerArregloPinturas(productosPinturas);
+    recorrerArregloSouvenirs(productosSouvenirs);
+  }
 }
+
+
+function recorrerArregloPinturas (arregloPinturas) {
+  arregloPinturas.forEach((producto) => {
+    const card = document.createElement ('div');
+    card.classList.add ('card');
+    card.innerHTML =
+     `
+    <img src="../Photos/${producto.img}" alt="${producto.nombre}">
+     <p class="texto_imagen"> ${producto.nombre} </p>
+      <p class="texto_imagen"> ${producto.descripcion} </p>
+       <h6 class="texto_imagen">$${producto.precio}</h6>
+       <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
+    `;
+    contenedorPinturas.appendChild(card);
+  
+  });
 }
+
+function recorrerArregloSouvenirs (arregloSouvenirs) {
+  arregloSouvenirs.forEach((producto) => {
+    const card = document.createElement ('div');
+    card.classList.add ('card');
+    card.innerHTML =
+  `
+    <img src="../Photos/${producto.img}"  alt="${producto.nombre}">
+     <p class="texto_imagen"> ${producto.nombre} </p>
+      <p class="texto_imagen"> ${producto.descripcion} </p>
+       <h6 class="texto_imagen">$${producto.precio}</h6>
+       <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
+  `;
+  contenedorSouvenirs.appendChild(card);
+});
+}
+
+function limpiarContenedorPinturas () {
+  while(contenedorPinturas.firstChild){
+    contenedorPinturas.removeChild(contenedorPinturas.firstChild);
+  }
+}
+
+function limpiarContenedorSouvenirs () {
+  while(contenedorSouvenirs.firstChild){
+    contenedorSouvenirs.removeChild(contenedorSouvenirs.firstChild);
+  }
+}
+
 
 function limpiarCarrito() {
 
   if (productosCarrito.length > 0){
-
   Swal.fire({
       title: 'Vaciar Carrito de Compras',
       text: '¿Está seguro que desea vaciar el carrito de compras?',
@@ -192,10 +283,13 @@ function agregarProducto(event){
     const productoAgregado = event.target.parentElement;
     
     datosProductoAgregado(productoAgregado);
+
+    }
   }
-}
+
 
 function datosProductoAgregado (producto){
+  
  const datosProducto = new Producto (
   producto.querySelector("img").src,
   producto.querySelector("p").textContent,
@@ -311,41 +405,16 @@ function ocultarModal(){
 
  async function renderizarProductosPinturas () {
 
- productosPinturas = await (realizarPeticion(filePinturas));
+     productosPinturas = await (realizarPeticion(filePinturas));
 
-      productosPinturas.forEach((producto) => {
-      const card = document.createElement ('div');
-      card.classList.add ('card');
-      card.innerHTML =
-       `
-      <img src="../Photos/${producto.img}" alt="${producto.nombre}">
-       <p class="texto_imagen"> ${producto.nombre} </p>
-        <p class="texto_imagen"> ${producto.descripcion} </p>
-         <h6 class="texto_imagen">$${producto.precio}</h6>
-         <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
-      `;
-      contenedorPinturas.appendChild(card);
-    
-    });
+     recorrerArregloPinturas(productosPinturas);
     }
 
     async function renderizarProductosSouvenirs () {
 
        productosSouvenirs = await (realizarPeticion(fileSouvenirs));
 
-        productosSouvenirs.forEach((producto) => {
-        const card = document.createElement ('div');
-        card.classList.add ('card');
-        card.innerHTML =
-      `
-        <img src="../Photos/${producto.img}"  alt="${producto.nombre}">
-         <p class="texto_imagen"> ${producto.nombre} </p>
-          <p class="texto_imagen"> ${producto.descripcion} </p>
-           <h6 class="texto_imagen">$${producto.precio}</h6>
-           <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
-      `;
-      contenedorSouvenirs.appendChild(card);
-    });
+        recorrerArregloSouvenirs(productosSouvenirs);
       }
 
       async function realizarPeticion(datos) {
@@ -360,10 +429,18 @@ function ocultarModal(){
     
             return data;
         } catch (error) {
-            
-            console.error(error);
-        }
-    }
+          Swal.fire({
+            text: "Error en la petición realizada. :(",
+            color: 'white',
+                  toast: "true",
+                  background: "#740001",
+                  confirmButtonText: "Ok",
+                  confirmButtonColor: "#D3A625",
+                  timer: 5000,
+          });
+        } 
+      }
+    
 
       function alertaPinturasCarrito(){
         Swal.fire({
@@ -414,7 +491,6 @@ function ocultarModal(){
     }
   }
       
-    // Verifica si los campos están completos
     if (nombre === "" || email === "" || domicilio == "" || ciudad == "" || pais == "" || postal == "" || !opcionSeleccionada) {
       Swal.fire({
         text: "Por favor complete todos los campos del formulario",
