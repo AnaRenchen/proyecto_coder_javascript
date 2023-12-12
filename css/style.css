@@ -567,7 +567,7 @@
 
      /* Estilos formulario para finalizar compra*/
 
-     #formfinalizar_compra{
+     #form_finalizar_compra{
       display: none;
       position: fixed;
       top: 50%;
@@ -582,7 +582,7 @@
       
     }
 
-    #formfinalizar_compra input[type="text"]  {
+    #form_finalizar_compra input[type="text"]  {
       background-color:beige;
       width: 100%;
       padding: 2px;
@@ -592,11 +592,11 @@
       box-sizing: border-box;
     }
 
-    #formfinalizar_compra input[type="text"].focus{
+    #form_finalizar_compra input[type="text"].focus{
       border:1.3px solid #D3A625;
     }
   
-    #formfinalizar_compra label {
+    #form_finalizar_compra label {
       justify-self: center;
       font-family: "Times New Roman", Times, serif;
       color: black;
@@ -673,7 +673,7 @@
       border-radius: 6px;
     }
 
-    #close_fincompra{
+    #close_fin_compra{
       margin-top:0em;
       text-decoration: none;
       margin-left:0.5em;
@@ -708,7 +708,7 @@
   transform: translateY(4px);
 }
  
-#totalPago {
+  #total_pago{
   text-align: center;
   margin: 8px auto;
   font-size: 1.3rem;
@@ -717,11 +717,12 @@
   background-color:rgb(240, 215, 146);
 }
 
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-#formfinalizar_compra {
+#form_finalizar_compra {
   animation: fadeIn 0.5s ease-in-out;
 }
 

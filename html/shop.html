@@ -89,11 +89,11 @@
 
                  <!-- Ventana Modal Formulario Fin de Compra-->
                  
-                 <form id="formfinalizar_compra" autocomplete="off">
+                 <form id="form_finalizar_compra" autocomplete="off">
                   <div class="container_fincompra">
                     <div class="fincompra_titulo">
                       <h3 class="titulo_fincompra"> Finalizar Compra </h3>
-                      <a id="close_fincompra" class="close_fincompra" href="#">X</a>
+                      <a id="close_fin_compra" class="close_fincompra" href="#">X</a>
                     </div>
                     <div class="datos_persona_fincompra">
                       <h3 class="subtitulos_form_compra"> Por favor ingrese sus datos </h3>
@@ -113,7 +113,7 @@
                     <div class="fincompra_datospago">
                       <h3 class="subtitulos_form_compra"> Métodos de Pago </h3>
                       <div class="formas_pago">
-                        <input type="radio" id="tarjetaCredito" name="formaPago" value="tarjetaCredito">
+                        <input type="radio" id="tarjeta_credito" name="formaPago" value="tarjetaCredito">
                         <label for="tarjetaCredito">Tarjeta de Crédito</label>
                     </div>
                     <div class="forma-pago">
@@ -121,15 +121,16 @@
                         <label for="paypal">PayPal</label>
                     </div>
                     <div class="forma-pago">
-                        <input type="radio" id="transferenciaBancaria" name="formaPago" value="transferenciaBancaria">
+                        <input type="radio" id="transferencia_bancaria" name="formaPago" value="transferenciaBancaria">
                         <label for="transferenciaBancaria">Transferencia</label>
                     </div>
-                        <p class= "importe_pago"> Importe a pagar: </p>
-                        <div id="totalPago"></div>
+                    <p class="importe_pago">Importe a pagar:</p>
+                    <div id="total_pago">
+                      <span class="importe_total_apagar"></span>
+                    </div>
                       
                         <div class="fincompra_footer">
                           <button type="submit" id="finalizar_pago" >Realizar el Pago</button>
-                      </div>
                       </div>
                     </div>
                   </div>

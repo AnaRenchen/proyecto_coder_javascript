@@ -5,6 +5,7 @@ const contenedorSouvenirs = document.getElementById("contenedor_souvenirs");
 const modal = document.getElementById("ventana_modal");
 const carrito = document.getElementById("carrito");
 const totalCarrito = document.getElementById("total");
+const totalPago = document.querySelector('.importe_total_apagar');
 const botonClose = document.getElementsByClassName("close")[0];
 const containerCart = document.querySelector(".modal_body");
 const contenedorProductos = document.querySelector(".contenedor_carrito");
@@ -12,15 +13,13 @@ const cantidadProductos = document.querySelector(".contar_productos");
 const cerrarBtn = document.getElementById('cerrarBtn');
 const vaciarCarrito = document.getElementById("vaciar_carrito")
 const finalizarCompra = document.querySelector('#finalizar_compra');
-const formFinCompra = document.getElementById('formfinalizar_compra');
-const closeCompra = document.getElementById ("close_fincompra");
-const totalPago = document.getElementById("totalPago");
+const formFinCompra = document.getElementById('form_finalizar_compra');
+const closeCompra = document.getElementById ("close_fin_compra");
 const inputFiltrar = document.querySelector("#filtro_input");
 const botonFiltrar = document.querySelector("#filtro_btn");
 let productosCarrito =[];
 let productosPinturas = [];
 let productosSouvenirs = [];
-
 
  // Clase para los productos 
 
@@ -50,7 +49,6 @@ function cargarEventos() {
     renderizarProductosSouvenirs();
     cargarCarritoLS();
     mostrarProductosCarrito();
-    agregarTotal();
     
   });
 
@@ -69,13 +67,15 @@ botonClose.onclick = function () {
   ocultarModal();
 };
 
-
 window.onclick = function (event){
   if (event.target == modal){
     ocultarModal();
   } else if (event.target == formFinCompra) {
     ocultarFormFinCompra();
 };
+
+}
+}
 
 finalizarCompra.onclick = function (){
   if (productosCarrito.length > 0){
@@ -98,8 +98,6 @@ finalizarCompra.onclick = function (){
 closeCompra.onclick = function (){
   ocultarFormFinCompra();
   };
-}
-}
 
 async function filtrarProductos () {
   const productosPinturas = await realizarPeticion(filePinturas);
@@ -143,7 +141,6 @@ async function filtrarProductos () {
     recorrerArregloSouvenirs(productosSouvenirs);
   }
 }
-
 
 function recorrerArregloPinturas (arregloPinturas) {
   arregloPinturas.forEach((producto) => {
@@ -189,7 +186,6 @@ function limpiarContenedorSouvenirs () {
     contenedorSouvenirs.removeChild(contenedorSouvenirs.firstChild);
   }
 }
-
 
 function limpiarCarrito() {
 
@@ -272,7 +268,6 @@ function eliminarProductos(event){
     mostrarProductosCarrito();
   }
 
-
 function cargarCarritoLS(){
   productosCarrito = JSON.parse(localStorage.getItem("productosLS")) || [];
 }
@@ -286,7 +281,6 @@ function agregarProducto(event){
 
     }
   }
-
 
 function datosProductoAgregado (producto){
   
@@ -370,12 +364,11 @@ containerCart.appendChild(div);
   calculartotal();
 }
 
-
 function calculartotal(){
   let total = productosCarrito.reduce((sumaTotal, producto) => sumaTotal + producto.subtotal, 0);
   
   totalCarrito.innerHTML = `Total de la compra: $${total} `;
-  return total;
+  totalPago.textContent = `$${total}`;
 }
 
 function mostrarCantidadProductos(){
@@ -511,29 +504,15 @@ function ocultarModal(){
           background: "#D3A625",
           confirmButtonColor: "#740001",
       });
-      totalPago.innerHTML = ''; 
       eliminarLocalStorage();
       cargarCarritoLS();
       mostrarProductosCarrito();
       ocultarFormFinCompra();
-      agregarTotal(); 
     }
   };
    
-  function agregarTotal() {
-    const total = calculartotal(); 
-    const totalPago = document.getElementById("totalPago");
-    const span = document.createElement("span");
-    span.classList.add("importe_totalapagar");
-    span.textContent = `$${total}`;
-  
-    totalPago.appendChild(span);
-  }
-  
- 
- 
- 
-   
+
+
 
     
 
