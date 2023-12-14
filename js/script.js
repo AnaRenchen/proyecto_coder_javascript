@@ -1,31 +1,30 @@
-const filePinturas = '../data/productos_pinturas.json';
-const fileSouvenirs = '../data/productos_souvenirs.json';
+const filePinturas = "../data/productos_pinturas.json";
+const fileSouvenirs = "../data/productos_souvenirs.json";
 const contenedorPinturas = document.getElementById("contenedor_pinturas");
 const contenedorSouvenirs = document.getElementById("contenedor_souvenirs");
 const modal = document.getElementById("ventana_modal");
 const carrito = document.getElementById("carrito");
 const totalCarrito = document.getElementById("total");
-const totalPago = document.querySelector('.importe_total_apagar');
+const totalPago = document.querySelector(".importe_total_apagar");
 const botonClose = document.getElementsByClassName("close")[0];
 const containerCart = document.querySelector(".modal_body");
 const contenedorProductos = document.querySelector(".contenedor_carrito");
 const cantidadProductos = document.querySelector(".contar_productos");
-const cerrarBtn = document.getElementById('cerrarBtn');
 const vaciarCarrito = document.getElementById("vaciar_carrito")
-const finalizarCompra = document.querySelector('#finalizar_compra');
-const formFinCompra = document.getElementById('form_finalizar_compra');
-const closeCompra = document.getElementById ("close_fin_compra");
+const finalizarCompra = document.querySelector("#finalizar_compra");
+const formFinCompra = document.getElementById("form_finalizar_compra");
+const closeCompra = document.getElementById("close_fin_compra");
 const inputFiltrar = document.querySelector("#filtro_input");
 const botonFiltrar = document.querySelector("#filtro_btn");
-let productosCarrito =[];
+let productosCarrito = [];
 let productosPinturas = [];
 let productosSouvenirs = [];
 
- // Clase para los productos 
+// Clase para los productos 
 
- class Producto {
+class Producto {
 
-  constructor (imagen, nombre, precio, id) {
+  constructor(imagen, nombre, precio, id) {
     this.id = id;
     this.imagen = imagen;
     this.nombre = nombre;
@@ -34,22 +33,21 @@ let productosSouvenirs = [];
     this.subtotal = 0;
   }
 
- obtenertotal () {
-  this.subtotal = this.precio * this.cantidad;
- }
-
+  obtenertotal() {
+    this.subtotal = this.precio * this.cantidad;
+  }
 }
 
 cargarEventos();
 
 function cargarEventos() {
 
-  document.addEventListener("DOMContentLoaded", () =>{
+  document.addEventListener("DOMContentLoaded", () => {
     renderizarProductosPinturas();
     renderizarProductosSouvenirs();
     cargarCarritoLS();
     mostrarProductosCarrito();
-    
+
   });
 
   contenedorPinturas.addEventListener("click", agregarProducto);
@@ -59,51 +57,51 @@ function cargarEventos() {
   vaciarCarrito.addEventListener("click", limpiarCarrito);
   botonFiltrar.addEventListener("click", filtrarProductos);
 
-carrito.onclick = function () {
-  modal.style.display ="block";
-};
+  carrito.onclick = function () {
+    modal.style.display = "block";
+  };
 
-botonClose.onclick = function () {
-  ocultarModal();
-};
-
-window.onclick = function (event){
-  if (event.target == modal){
+  botonClose.onclick = function () {
     ocultarModal();
-  } else if (event.target == formFinCompra) {
-    ocultarFormFinCompra();
-};
+  };
 
-}
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      ocultarModal();
+    } else if (event.target == formFinCompra) {
+      ocultarFormFinCompra();
+    };
+
+  }
 }
 
-finalizarCompra.onclick = function (){
-  if (productosCarrito.length > 0){
-  formFinCompra.style.display = 'block';
-  modal.style.display = 'none';
- 
+finalizarCompra.onclick = function () {
+  if (productosCarrito.length > 0) {
+    formFinCompra.style.display = "block";
+    modal.style.display = "none";
+
   } else {
     Swal.fire({
       text: "Primero tiene que elegir productos! :)",
-      color: 'white',
-            toast: "true",
-            background: "#740001",
-            confirmButtonText: "Ahora mismo!",
-            confirmButtonColor: "#D3A625",
-            timer: 3000,
-  });
-}
+      color: "white",
+      toast: "true",
+      background: "#740001",
+      confirmButtonText: "Ahora mismo!",
+      confirmButtonColor: "#D3A625",
+      timer: 3000,
+    });
+  }
 };
 
-closeCompra.onclick = function (){
+closeCompra.onclick = function () {
   ocultarFormFinCompra();
-  };
+};
 
-async function filtrarProductos () {
+async function filtrarProductos() {
   const productosPinturas = await realizarPeticion(filePinturas);
   const productosSouvenirs = await realizarPeticion(fileSouvenirs);
   const productos = [...productosPinturas, ...productosSouvenirs];
-  
+
   let productosFiltrados, filtro;
 
   filtro = inputFiltrar.value.toLowerCase();
@@ -124,30 +122,30 @@ async function filtrarProductos () {
     if (souvenirsFiltrados.length > 0) {
       recorrerArregloSouvenirs(souvenirsFiltrados);
     }
-    
+
   } else {
     Swal.fire({
       text: "No se encontraron productos.",
-      color: 'white',
-            toast: "true",
-            background: "#740001",
-            confirmButtonText: "Ok",
-            confirmButtonColor: "#D3A625",
-            timer: 3000,
+      color: "white",
+      toast: "true",
+      background: "#740001",
+      confirmButtonText: "Ok",
+      confirmButtonColor: "#D3A625",
+      timer: 3000,
     });
     limpiarContenedorPinturas();
     limpiarContenedorSouvenirs();
     recorrerArregloPinturas(productosPinturas);
     recorrerArregloSouvenirs(productosSouvenirs);
   }
-}
+};
 
-function recorrerArregloPinturas (arregloPinturas) {
+function recorrerArregloPinturas(arregloPinturas) {
   arregloPinturas.forEach((producto) => {
-    const card = document.createElement ('div');
-    card.classList.add ('card');
+    const card = document.createElement("div");
+    card.classList.add("card");
     card.innerHTML =
-     `
+      `
     <img src="../Photos/${producto.img}" alt="${producto.nombre}">
      <p class="texto_imagen"> ${producto.nombre} </p>
       <p class="texto_imagen"> ${producto.descripcion} </p>
@@ -155,99 +153,99 @@ function recorrerArregloPinturas (arregloPinturas) {
        <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
     `;
     contenedorPinturas.appendChild(card);
-  
-  });
-}
 
-function recorrerArregloSouvenirs (arregloSouvenirs) {
+  });
+};
+
+function recorrerArregloSouvenirs(arregloSouvenirs) {
   arregloSouvenirs.forEach((producto) => {
-    const card = document.createElement ('div');
-    card.classList.add ('card');
+    const card = document.createElement("div");
+    card.classList.add("card");
     card.innerHTML =
-  `
+      `
     <img src="../Photos/${producto.img}"  alt="${producto.nombre}">
      <p class="texto_imagen"> ${producto.nombre} </p>
       <p class="texto_imagen"> ${producto.descripcion} </p>
        <h6 class="texto_imagen">$${producto.precio}</h6>
        <a id=${producto.id} class="boton_agregar" href="#">Agregar Producto</a>
   `;
-  contenedorSouvenirs.appendChild(card);
-});
-}
+    contenedorSouvenirs.appendChild(card);
+  });
+};
 
-function limpiarContenedorPinturas () {
-  while(contenedorPinturas.firstChild){
+function limpiarContenedorPinturas() {
+  while (contenedorPinturas.firstChild) {
     contenedorPinturas.removeChild(contenedorPinturas.firstChild);
   }
-}
+};
 
-function limpiarContenedorSouvenirs () {
-  while(contenedorSouvenirs.firstChild){
+function limpiarContenedorSouvenirs() {
+  while (contenedorSouvenirs.firstChild) {
     contenedorSouvenirs.removeChild(contenedorSouvenirs.firstChild);
   }
-}
+};
 
 function limpiarCarrito() {
 
-  if (productosCarrito.length > 0){
-  Swal.fire({
-      title: 'Vaciar Carrito de Compras',
-      text: '¿Está seguro que desea vaciar el carrito de compras?',
+  if (productosCarrito.length > 0) {
+    Swal.fire({
+      title: "Vaciar Carrito de Compras",
+      text: "¿Está seguro que desea vaciar el carrito de compras?",
       color: "black",
       imageUrl: "../Photos/cat.png",
       iconColor: "black",
       showCancelButton: true,
-      confirmButtonText: 'Aceptar',
-      cancelButtonText: 'Cancelar',
+      confirmButtonText: "Aceptar",
+      cancelButtonText: "Cancelar",
       confirmButtonColor: "green",
       cancelButtonColor: "red",
       background: "#D3A625",
-  }).then((btnResponse) => {
+    }).then((btnResponse) => {
       if (btnResponse.isConfirmed) {
-          Swal.fire({
-              title: 'Carrito vacío',
-              color: "black",
-              icon: 'success',
-              iconColor: "black",
-              background: "#D3A625",
-              text: 'Ya no hay productos en su carrito de compras.',
-              confirmButtonColor: "#740001",
-              confirmButtonText: "Ok",
-              timer: 5000,
-          });
-          eliminarLocalStorage();
-          cargarCarritoLS();
-          mostrarProductosCarrito();
-          ocultarModal();
+        Swal.fire({
+          title: "Carrito vacío",
+          color: "black",
+          icon: "success",
+          iconColor: "black",
+          background: "#D3A625",
+          text: "Ya no hay productos en su carrito de compras.",
+          confirmButtonColor: "#740001",
+          confirmButtonText: "Ok",
+          timer: 5000,
+        });
+        eliminarLocalStorage();
+        cargarCarritoLS();
+        mostrarProductosCarrito();
+        ocultarModal();
       } else {
-          Swal.fire({
-              title: 'Operación cancelada',
-              icon: 'info',
-              iconColor:"black",
-              text: 'La operación de vaciar el carrito de compras fue cancelada.',
-              color: "black",
-              background: "#D3A625",
-              confirmButtonColor: "#740001",
-              confirmButtonText: "Ok",
-              timer: 5000,
-          });
+        Swal.fire({
+          title: "Operación cancelada",
+          icon: "info",
+          iconColor: "black",
+          text: "La operación de vaciar el carrito de compras fue cancelada.",
+          color: "black",
+          background: "#D3A625",
+          confirmButtonColor: "#740001",
+          confirmButtonText: "Ok",
+          timer: 5000,
+        });
       }
-  });
-} else {
-  Swal.fire({
-    text: "Su carrito ya está vacío :)",
-    color: 'white',
-          toast: "true",
-          background: "#740001",
-          confirmButtonText: "Es verdad!",
-          confirmButtonColor: "#D3A625",
-          timer: 3000,
-  });
-}
-}
+    });
+  } else {
+    Swal.fire({
+      text: "Su carrito ya está vacío :)",
+      color: "white",
+      toast: "true",
+      background: "#740001",
+      confirmButtonText: "Es verdad!",
+      confirmButtonColor: "#D3A625",
+      timer: 3000,
+    });
+  }
+};
 
-function eliminarProductos(event){
-  if(event.target.classList.contains("eliminar_producto")){
+function eliminarProductos(event) {
+  if (event.target.classList.contains("eliminar_producto")) {
     const productoID = parseInt(event.target.getAttribute("id"));
 
     productosCarrito = productosCarrito.filter((producto) => {
@@ -259,43 +257,43 @@ function eliminarProductos(event){
         } else {
           return false;
         }
-      }  else{
-      return true;
+      } else {
+        return true;
       }
     });
   }
-    guardarLocalStorage();
-    mostrarProductosCarrito();
-  }
+  guardarLocalStorage();
+  mostrarProductosCarrito();
+};
 
-function cargarCarritoLS(){
+function cargarCarritoLS() {
   productosCarrito = JSON.parse(localStorage.getItem("productosLS")) || [];
-}
+};
 
-function agregarProducto(event){
+function agregarProducto(event) {
   event.preventDefault();
-  if(event.target.classList.contains("boton_agregar")){
+  if (event.target.classList.contains("boton_agregar")) {
     const productoAgregado = event.target.parentElement;
-    
+
     datosProductoAgregado(productoAgregado);
 
-    }
   }
+};
 
-function datosProductoAgregado (producto){
-  
- const datosProducto = new Producto (
-  producto.querySelector("img").src,
-  producto.querySelector("p").textContent,
-  Number(producto.querySelector("h6").textContent.replace("$","")),
-  parseInt(producto.querySelector("a").getAttribute("id")));
+function datosProductoAgregado(producto) {
+
+  const datosProducto = new Producto(
+    producto.querySelector("img").src,
+    producto.querySelector("p").textContent,
+    Number(producto.querySelector("h6").textContent.replace("$", "")),
+    parseInt(producto.querySelector("a").getAttribute("id")));
 
   datosProducto.obtenertotal();
-  
-  agregarCarrito(datosProducto);
-}
 
-function agregarCarrito(productoAgregar){
+  agregarCarrito(datosProducto);
+};
+
+function agregarCarrito(productoAgregar) {
 
   const esPintura = productosPinturas.some((pintura) => pintura.id === productoAgregar.id);
 
@@ -303,17 +301,17 @@ function agregarCarrito(productoAgregar){
     const yaEnCarrito = productosCarrito.some((producto) => producto.id === productoAgregar.id);
 
     if (yaEnCarrito) {
-     
-     alertaPinturasCarrito()
+
+      alertaPinturasCarrito()
       return;
     }
   }
- 
+
   const productoExiste = productosCarrito.some((producto) => producto.id === productoAgregar.id);
 
-  if(productoExiste){
-     const productos = productosCarrito.map((producto) =>{
-      if (producto.id === productoAgregar.id){
+  if (productoExiste) {
+    const productos = productosCarrito.map((producto) => {
+      if (producto.id === productoAgregar.id) {
         producto.cantidad++;
         producto.subtotal = producto.precio * producto.cantidad;
 
@@ -321,161 +319,168 @@ function agregarCarrito(productoAgregar){
       } else {
         return producto;
       }
-     });
+    });
 
-     productosCarrito = productos;
+    productosCarrito = productos;
 
   } else {
     productosCarrito.push(productoAgregar);
   }
- guardarLocalStorage();
- mostrarProductosCarrito();
-}
+  guardarLocalStorage();
+  mostrarProductosCarrito();
+};
 
-function guardarLocalStorage(){
+function guardarLocalStorage() {
   localStorage.setItem("productosLS", JSON.stringify(productosCarrito));
-}
+};
 
 function eliminarLocalStorage() {
-  localStorage.removeItem('productosLS');
-}
+  localStorage.removeItem("productosLS");
+};
 
-function mostrarProductosCarrito(){
+function mostrarProductosCarrito() {
   limpiarHTML();
 
-  productosCarrito.forEach((producto) =>{
+  productosCarrito.forEach((producto) => {
 
-    const {imagen, nombre, precio, cantidad, subtotal, id} = producto;
+    const {
+      imagen,
+      nombre,
+      precio,
+      cantidad,
+      subtotal,
+      id
+    } = producto;
 
     const div = document.createElement("div");
     div.classList.add("contenedor_producto");
     div.innerHTML = `
-    <img src="${imagen}" width="100">
+    <img src="${imagen}"width="100">
     <p class="texto_imagen">${nombre}</p>
     <p class="texto_imagen">$${precio}</p>
     <p class="texto_imagen">${cantidad}</p>
     <p class="texto_imagen">$${subtotal}</p>
     <a href="#" class ="eliminar_producto" id="${id}"> X </a>
     `
-containerCart.appendChild(div);
+    containerCart.appendChild(div);
   });
 
   mostrarCantidadProductos();
   calculartotal();
-}
+};
 
-function calculartotal(){
+function calculartotal() {
   let total = productosCarrito.reduce((sumaTotal, producto) => sumaTotal + producto.subtotal, 0);
-  
+
   totalCarrito.innerHTML = `Total de la compra: $${total} `;
   totalPago.textContent = `$${total}`;
-}
+};
 
-function mostrarCantidadProductos(){
+function mostrarCantidadProductos() {
   let contarProductos;
 
-  if (productosCarrito.length >0){
-    contenedorProductos.style.display ="flex";
-    contenedorProductos.style.alignItems ="center";
+  if (productosCarrito.length > 0) {
+    contenedorProductos.style.display = "flex";
+    contenedorProductos.style.alignItems = "center";
     cantidadProductos.style.display = "flex";
-    contarProductos = productosCarrito.reduce((cantidad, producto)=> cantidad + producto.cantidad,0);
+    contarProductos = productosCarrito.reduce((cantidad, producto) => cantidad + producto.cantidad, 0);
     cantidadProductos.innerText = `${contarProductos}`;
   } else {
     contenedorProductos.style.display = "block";
     cantidadProductos.style.display = "none";
   }
-}
+};
 
-function limpiarHTML(){
-  while (containerCart.firstChild){
+function limpiarHTML() {
+  while (containerCart.firstChild) {
     containerCart.removeChild(containerCart.firstChild);
   }
-}
+};
 
-function ocultarModal(){
+function ocultarModal() {
   modal.style.display = "none";
-}
+};
 
- async function renderizarProductosPinturas () {
+async function renderizarProductosPinturas() {
 
-     productosPinturas = await (realizarPeticion(filePinturas));
+  productosPinturas = await (realizarPeticion(filePinturas));
 
-     recorrerArregloPinturas(productosPinturas);
+  recorrerArregloPinturas(productosPinturas);
+};
+
+async function renderizarProductosSouvenirs() {
+
+  productosSouvenirs = await (realizarPeticion(fileSouvenirs));
+
+  recorrerArregloSouvenirs(productosSouvenirs);
+};
+
+async function realizarPeticion(datos) {
+  try {
+    const response = await fetch(datos);
+
+    if (!response.ok) {
+      throw new Error(`Error en la petición: ${response.status} ${response.statusText}`);
     }
 
-    async function renderizarProductosSouvenirs () {
+    const data = await response.json();
 
-       productosSouvenirs = await (realizarPeticion(fileSouvenirs));
+    return data;
+  } catch (error) {
+    Swal.fire({
+      text: "Error en la petición realizada. :(",
+      color: "white",
+      toast: "true",
+      background: "#740001",
+      confirmButtonText: "Ok",
+      confirmButtonColor: "#D3A625",
+      timer: 5000,
+    });
+  }
+};
 
-        recorrerArregloSouvenirs(productosSouvenirs);
-      }
 
-      async function realizarPeticion(datos) {
-        try {
-            const response = await fetch(datos);
-    
-            if (!response.ok) {
-                throw new Error(`Error en la petición: ${response.status} ${response.statusText}`);
-            }
-    
-            const data = await response.json();
-    
-            return data;
-        } catch (error) {
-          Swal.fire({
-            text: "Error en la petición realizada. :(",
-            color: 'white',
-                  toast: "true",
-                  background: "#740001",
-                  confirmButtonText: "Ok",
-                  confirmButtonColor: "#D3A625",
-                  timer: 5000,
-          });
-        } 
-      }
-    
-
-      function alertaPinturasCarrito(){
-        Swal.fire({
-          title: "¡Oops, esta pintura ya fue agregada al carrito!",
-          color: 'white',
-          toast: "true",
-          background: "#740001",
-          confirmButtonText: "Entendido",
-          confirmButtonColor: "#D3A625",
-          showClass: {
-            popup: `
+function alertaPinturasCarrito() {
+  Swal.fire({
+    title: "¡Oops, esta pintura ya fue agregada al carrito!",
+    color: "white",
+    toast: "true",
+    background: "#740001",
+    confirmButtonText: "Entendido",
+    confirmButtonColor: "#D3A625",
+    showClass: {
+      popup: `
               animate__animated
               animate__fadeInUp
               animate__faster
             `
-          },
-          hideClass: {
-            popup: `
+    },
+    hideClass: {
+      popup: `
               animate__animated
               animate__fadeOutDown
               animate__faster
             `
-          }
-        });
     }
+  });
+};
 
-    function ocultarFormFinCompra () {
-      formFinCompra.style.display = 'none';
-    }
+function ocultarFormFinCompra() {
+  formFinCompra.style.display = "none";
+};
 
-   function compraRealizada (e){
-    e.preventDefault();
-     
-      const nombre = document.getElementById("nombre").value;
-      const email = document.getElementById("email").value;
-      const domicilio = document.getElementById("domicilio").value;
-      const ciudad = document.getElementById("ciudad").value;
-      const pais = document.getElementById("pais").value;
-      const postal = document.getElementById("postal").value;
-      const opcionesPago = document.getElementsByName("formaPago");
+function compraRealizada(e) {
+  e.preventDefault();
 
-      
+  const nombre = document.getElementById("nombre").value;
+  const email = document.getElementById("email").value;
+  const domicilio = document.getElementById("domicilio").value;
+  const ciudad = document.getElementById("ciudad").value;
+  const pais = document.getElementById("pais").value;
+  const postal = document.getElementById("postal").value;
+  const opcionesPago = document.getElementsByName("formaPago");
+
+
   let opcionSeleccionada = false;
   for (let i = 0; i < opcionesPago.length; i++) {
     if (opcionesPago[i].checked) {
@@ -483,38 +488,30 @@ function ocultarModal(){
       break;
     }
   }
-      
-    if (nombre === "" || email === "" || domicilio == "" || ciudad == "" || pais == "" || postal == "" || !opcionSeleccionada) {
-      Swal.fire({
-        text: "Por favor complete todos los campos del formulario",
-        color: 'white',
-              toast: "true",
-              background: "#740001",
-              confirmButtonText: "Ok",
-              confirmButtonColor: "#D3A625",
-              timer: 3000,
-      });
-    } else {
-      formFinCompra.reset();
-      Swal.fire({
-          imageUrl: "../Photos/gueixa.png",
-          title: '¡Muchas gracias por su compra!',
-          text: 'Entraremos en contacto en los próximos días para coordinar el envío.',
-          color: "black",
-          background: "#D3A625",
-          confirmButtonColor: "#740001",
-      });
-      eliminarLocalStorage();
-      cargarCarritoLS();
-      mostrarProductosCarrito();
-      ocultarFormFinCompra();
-    }
-  };
-   
 
-
-
-    
-
-  
-    
+  if (nombre === "" || email === "" || domicilio == "" || ciudad == "" || pais == "" || postal == "" || !opcionSeleccionada) {
+    Swal.fire({
+      text: "Por favor complete todos los campos del formulario",
+      color: "white",
+      toast: "true",
+      background: "#740001",
+      confirmButtonText: "Ok",
+      confirmButtonColor: "#D3A625",
+      timer: 3000,
+    });
+  } else {
+    formFinCompra.reset();
+    Swal.fire({
+      imageUrl: "../Photos/gueixa.png",
+      title: "¡Muchas gracias por su compra!",
+      text: "Entraremos en contacto en los próximos días para coordinar el envío.",
+      color: "black",
+      background: "#D3A625",
+      confirmButtonColor: "#740001",
+    });
+    eliminarLocalStorage();
+    cargarCarritoLS();
+    mostrarProductosCarrito();
+    ocultarFormFinCompra();
+  }
+};

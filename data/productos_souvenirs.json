@@ -1,42 +1,42 @@
 [
-    {
-        "id": 26,
-        "nombre": "Mate y Bombilla",
-        "precio": 10,
-        "img": "mate.jpg",
-        "stock": 20,
-        "descripcion": "+ bombilla y sticker"
-    },
-    {
-        "id": 27,
-        "nombre": "Pulsera Nenju",
-        "precio": 10,
-        "img": "pulsera.jpg",
-        "stock": 20,
-        "descripcion": "+ sticker y postcard"
-    },
-    {
-        "id": 28,
-        "nombre": "Remera Fudoshin",
-        "precio": 20,
-        "img": "remera_fudoshin.jpeg",
-        "stock": 10,
-        "descripcion": "Talle Único"
-    },
-    {
-        "id": 29,
-        "nombre": "Remera Trailokyavijaya",
-        "precio": 20,
-        "img": "remera_trai.jpeg",
-        "stock": 10,
-        "descripcion": "Talle Único"
-    },
-    {
-        "id": 30,
-        "nombre": "Incienso en polvo",
-        "precio": 2,
-        "img": "incienso_polvo.jpeg",
-        "stock": 20,
-        "descripcion": "para frotar en las manos"
-    }
+  {
+    "id": 26,
+    "nombre": "Mate y Bombilla",
+    "precio": 10,
+    "img": "mate.jpg",
+    "stock": 20,
+    "descripcion": "+ bombilla y sticker"
+  },
+  {
+    "id": 27,
+    "nombre": "Pulsera Nenju",
+    "precio": 10,
+    "img": "pulsera.jpg",
+    "stock": 20,
+    "descripcion": "+ sticker y postcard"
+  },
+  {
+    "id": 28,
+    "nombre": "Remera Fudoshin",
+    "precio": 20,
+    "img": "remera_fudoshin.jpeg",
+    "stock": 10,
+    "descripcion": "Talle Único"
+  },
+  {
+    "id": 29,
+    "nombre": "Remera Trailokyavijaya",
+    "precio": 20,
+    "img": "remera_trai.jpeg",
+    "stock": 10,
+    "descripcion": "Talle Único"
+  },
+  {
+    "id": 30,
+    "nombre": "Incienso en polvo",
+    "precio": 2,
+    "img": "incienso_polvo.jpeg",
+    "stock": 20,
+    "descripcion": "para frotar en las manos"
+  }
 ]

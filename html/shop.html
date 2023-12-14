@@ -1,182 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link con la hoja de estilos -->
-    <link rel="stylesheet" href="../css/style.css">
-    <meta name="description" content=" Tienda de productos de Santu Horisada, tatuador tradicional japones en Argentina.">
-    <link rel="shortcut icon" href="../Photos/logo_header.PNG" type="image/x-icon">
-    <title>Shop</title>
-     <!-- Vinculo con Sweet Alert -->
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- Vinculo con javascript -->
-    <!--<script defer src="../js/productos.js"></script>-->
-    <script defer src="../js/script.js"> </script>
-    <!-- Vinculo con la pagina de bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<!-- Goofle fonts Sawarabi Mincho-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link con la hoja de estilos -->
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content=" Tienda de productos de Santu Horisada, tatuador tradicional japones en Argentina.">
+  <link rel="shortcut icon" href="../Photos/logo_header.PNG" type="image/x-icon">
+  <title>Shop</title>
+  <!-- Vinculo con Sweet Alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Vinculo con javascript -->
+  <script defer src="../js/script.js"> </script>
+  <!-- Vinculo con la pagina de bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <!-- Goofle fonts Sawarabi Mincho-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
 
- <!-- Vinculo con la pagina de animaciones-->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Vinculo con la pagina de animaciones-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    </head>
+</head>
+
 <body class="body_color">
 
-    <header>
-     <!-- Zona Navegable comun para todas las paginas -->
-     <div class = "contenedor_cart">
+  <header>
+    <!-- Zona Navegable comun para todas las paginas -->
+    <div class="contenedor_cart">
       <a href="#cart" id="carrito">
         <div class="contenedor_carrito">
           <div id="productos_carrito" class="contar_productos">0</div>
-          <img class="carrito" src="../Photos/cart.png" alt="Carrito de compras" /> 
-      </div></a>
-      
-  </div>
-     <nav class="navbar navbar-expand-md">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html"><img src="../Photos/logo_header.PNG" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                    </li>
-                  </ul>
-                </div>
-              </div> 
-            </nav>   
-          </header>
+          <img class="carrito" src="../Photos/cart.png" alt="Carrito de compras" />
+        </div>
+      </a>
 
-                <main>
-                 
-                    <h1 class="titulos_paginas animate__animated animate__zoomIn" id="shop_link"> Shop </h1>
-                    <p class="texto_paginas"> ¡Muchas gracias por su compra! </p>
-                    <p class="texto_paginas_shop_dolares"> *Los precios de los productos están expresados en dólares. </p>
-                    <div class="contenedor_filtro">
-                    <input type="text" class="search_input" id="filtro_input" placeholder="Buscar producto...">
-                    <button id="filtro_btn" class="boton_filtro"> Filtrar </button>
-                    </div>
-                    <!-- Ventana Modal Carrito -->
-                    <div id="ventana_modal" class="modal">
-                      <div class="contenido_modal">
-                        <div class = "header_modal">
-                          <span class="close">&times;</span>
-                          <h3>Shopping Cart</h3>
-                        </div>
-                        <div class="modal_body"></div>
-                        <div class="modal_footer">
-                        <h4 id="total"></h4>
-                        <a id="finalizar_compra" class="boton_carrito" href="#">Finalizar</a>
-                        <a id="vaciar_carrito" class="boton_carrito" href="#">Vaciar</a>
-                      </div>
-                    </div>
-                    </div>
+    </div>
+    <nav class="navbar navbar-expand-md">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html"><img src="../Photos/logo_header.PNG" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-                 <!-- Ventana Modal Formulario Fin de Compra-->
-                 
-                 <form id="form_finalizar_compra" autocomplete="off">
-                  <div class="container_fincompra">
-                    <div class="fincompra_titulo">
-                      <h3 class="titulo_fincompra"> Finalizar Compra </h3>
-                      <a id="close_fin_compra" class="close_fincompra" href="#">X</a>
-                    </div>
-                    <div class="datos_persona_fincompra">
-                      <h3 class="subtitulos_form_compra"> Por favor ingrese sus datos </h3>
-                    <label for="nombre">Nombre y Apellido</label>
-                    <input id="nombre" type="text" placeholder="Nombre y Apellido" class="input-style">
-                    <label for="email">E-Mail</label>
-                    <input id="email" type="text" placeholder="@ejemplo.com" class="input-style">
-                    <label for="domicilio">Domicilio</label>
-                    <input id="domicilio" type="text" placeholder="Calle - Nro - Barrio" class="input-style">
-                    <label for="ciudad">Ciudad</label>
-                    <input id="ciudad" type="text" placeholder="Ciudad" class="input-style">
-                    <label for="pais">Pais</label>
-                    <input id="pais" type="text" placeholder="Pais" class="input-style">
-                    <label for="postal">Código Postal</label>
-                    <input id="postal" type="text" placeholder="Código Postal" class="input-style">
-                    </div>
-                    <div class="fincompra_datospago">
-                      <h3 class="subtitulos_form_compra"> Métodos de Pago </h3>
-                      <div class="formas_pago">
-                        <input type="radio" id="tarjeta_credito" name="formaPago" value="tarjetaCredito">
-                        <label for="tarjetaCredito">Tarjeta de Crédito</label>
-                    </div>
-                    <div class="forma-pago">
-                        <input type="radio" id="paypal" name="formaPago" value="paypal">
-                        <label for="paypal">PayPal</label>
-                    </div>
-                    <div class="forma-pago">
-                        <input type="radio" id="transferencia_bancaria" name="formaPago" value="transferenciaBancaria">
-                        <label for="transferenciaBancaria">Transferencia</label>
-                    </div>
-                    <p class="importe_pago">Importe a pagar:</p>
-                    <div id="total_pago">
-                      <span class="importe_total_apagar"></span>
-                    </div>
-                      
-                        <div class="fincompra_footer">
-                          <button type="submit" id="finalizar_pago" >Realizar el Pago</button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+  <main>
 
-                   <section class="pinturas">
-                    <h2 class = "titulo_section_shop"> Paintings </h2>
-                    <div id="contenedor_pinturas"></div>
-                    </section>
+    <h1 class="titulos_paginas animate__animated animate__zoomIn" id="shop_link"> Shop </h1>
+    <p class="texto_paginas"> ¡Muchas gracias por su compra! </p>
+    <p class="texto_paginas_shop_dolares"> *Los precios de los productos están expresados en dólares. </p>
+    <div class="contenedor_filtro">
+      <input type="text" class="search_input" id="filtro_input" placeholder="Buscar producto...">
+      <button id="filtro_btn" class="boton_filtro"> Filtrar </button>
+    </div>
+    <!-- Ventana Modal Carrito -->
+    <div id="ventana_modal" class="modal">
+      <div class="contenido_modal">
+        <div class="header_modal">
+          <span class="close">&times;</span>
+          <h3>Shopping Cart</h3>
+        </div>
+        <div class="modal_body"></div>
+        <div class="modal_footer">
+          <h4 id="total"></h4>
+          <a id="finalizar_compra" class="boton_carrito" href="#">Finalizar</a>
+          <a id="vaciar_carrito" class="boton_carrito" href="#">Vaciar</a>
+        </div>
+      </div>
+    </div>
 
-                      <section class = "souvenirs">
-                        <h2 class= "titulo_section_shop"> Souvenirs </h2>
-                        <div id="contenedor_souvenirs"></div>
-                      </section>
-                      
-                   
-                      <div class="flecha_arriba" data-aos="fade-up" data-aos-duration="1000">
-                        <a href="#shop_link"><img class="flecha"  src="../Photos/up.png" alt="flecha hacia arriba"></a>
-                        </div>
+    <!-- Ventana Modal Formulario Fin de Compra-->
 
-                </main>
-   <!--Footer de todas las paginas-->
-   <footer>
+    <form id="form_finalizar_compra" autocomplete="off">
+      <div class="container_fincompra">
+        <div class="fincompra_titulo">
+          <h3 class="titulo_fincompra"> Finalizar Compra </h3>
+          <a id="close_fin_compra" class="close_fincompra" href="#">X</a>
+        </div>
+        <div class="datos_persona_fincompra">
+          <h3 class="subtitulos_form_compra"> Por favor ingrese sus datos </h3>
+          <label for="nombre">Nombre y Apellido</label>
+          <input id="nombre" type="text" placeholder="Nombre y Apellido" class="input-style">
+          <label for="email">E-Mail</label>
+          <input id="email" type="text" placeholder="@ejemplo.com" class="input-style">
+          <label for="domicilio">Domicilio</label>
+          <input id="domicilio" type="text" placeholder="Calle - Nro - Barrio" class="input-style">
+          <label for="ciudad">Ciudad</label>
+          <input id="ciudad" type="text" placeholder="Ciudad" class="input-style">
+          <label for="pais">Pais</label>
+          <input id="pais" type="text" placeholder="Pais" class="input-style">
+          <label for="postal">Código Postal</label>
+          <input id="postal" type="text" placeholder="Código Postal" class="input-style">
+        </div>
+        <div class="fincompra_datospago">
+          <h3 class="subtitulos_form_compra"> Métodos de Pago </h3>
+          <div class="formas_pago">
+            <input type="radio" id="tarjeta_credito" name="formaPago" value="tarjetaCredito">
+            <label for="tarjetaCredito">Tarjeta de Crédito</label>
+          </div>
+          <div class="forma-pago">
+            <input type="radio" id="paypal" name="formaPago" value="paypal">
+            <label for="paypal">PayPal</label>
+          </div>
+          <div class="forma-pago">
+            <input type="radio" id="transferencia_bancaria" name="formaPago" value="transferenciaBancaria">
+            <label for="transferenciaBancaria">Transferencia</label>
+          </div>
+          <p class="importe_pago">Importe a pagar:</p>
+          <div id="total_pago">
+            <span class="importe_total_apagar"></span>
+          </div>
+
+          <div class="fincompra_footer">
+            <button type="submit" id="finalizar_pago">Realizar el Pago</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <section class="pinturas">
+      <h2 class="titulo_section_shop"> Paintings </h2>
+      <div id="contenedor_pinturas"></div>
+    </section>
+
+    <section class="souvenirs">
+      <h2 class="titulo_section_shop"> Souvenirs </h2>
+      <div id="contenedor_souvenirs"></div>
+    </section>
+
+
+    <div class="flecha_arriba" data-aos="fade-up" data-aos-duration="1000">
+      <a href="#shop_link"><img class="flecha" src="../Photos/up.png" alt="flecha hacia arriba"></a>
+    </div>
+
+  </main>
+  <!--Footer de todas las paginas-->
+  <footer>
     <div class="contenedor_footer">
-    <div class="items_footer">
- <a class="logo_footer" href="../index.html"><img class="logo_footer" src="../Photos/logo_header.PNG" alt=""></a>
-    <p class="footer_letter"> Si le interesa tatuarse podrá encontrar más información en el Instagram. </p>
-    <a class="logo_insta_link" href="https://www.instagram.com/santuhorisada/" target="_blank">
-        <img class="logo_insta" src="../Photos/instagram_logo.png" alt=" Logo de Instagram"></a>
-        
-        <a class="logo_direccion" href="https://maps.app.goo.gl/AhYJxdLQMR4zB7vF9" target="_blank"><img class="logo_direccion" src="../Photos/dire_grande.png" alt=""></a>
+      <div class="items_footer">
+        <a class="logo_footer" href="../index.html"><img class="logo_footer" src="../Photos/logo_header.PNG" alt=""></a>
+        <p class="footer_letter"> Si le interesa tatuarse podrá encontrar más información en el Instagram. </p>
+        <a class="logo_insta_link" href="https://www.instagram.com/santuhorisada/" target="_blank">
+          <img class="logo_insta" src="../Photos/instagram_logo.png" alt=" Logo de Instagram"></a>
+
+        <a class="logo_direccion" href="https://maps.app.goo.gl/AhYJxdLQMR4zB7vF9" target="_blank"><img
+            class="logo_direccion" src="../Photos/dire_grande.png" alt=""></a>
         <p class="footer_letter1"> Buenos Aires, Argentina </p>
         <p class="footer_letter2"> Diseñado por Ana Maria Magalhães 2023 &copy; </p>
+      </div>
     </div>
-</div>
-</footer>
+  </footer>
 
-     <!-- Vinculo con la pagina de bootstrap-->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
- </script>
+  <!-- Vinculo con la pagina de bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+  </script>
 
-   <!-- Vinculo pagina animaciones-->
-   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-   <script>
+  <!-- Vinculo pagina animaciones-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
     AOS.init();
   </script>
 </body>
+
 </html>

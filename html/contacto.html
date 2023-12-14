@@ -1,112 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link con la hoja de estilos -->
     <link rel="stylesheet" href="../css/style.css">
-    <meta name="description" content=" Tienda de productos de Santu Horisada, tatuador tradicional japones en Argentina.">
+    <meta name="description"
+        content=" Tienda de productos de Santu Horisada, tatuador tradicional japones en Argentina.">
     <link rel="shortcut icon" href="../Photos/logo_header.PNG" type="image/x-icon">
     <title>Contacto</title>
-     <!-- Vinculo con Sweet Alert -->
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Vinculo con Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Vinculo con javascript contacto -->
     <script defer src="../js/contacto.js"> </script>
-    <!--<script defer src="../js/script.js"> </script> -->
     <!-- Vinculo con la pagina de bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<!-- Goofle fonts Sawarabi Mincho-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <!-- Goofle fonts Sawarabi Mincho-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
 
- <!-- Vinculo con la pagina de animaciones-->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Vinculo con la pagina de animaciones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    </head>
+</head>
+
 <body class="body_color">
 
     <header>
         <!-- Zona Navegable comun para todas las paginas -->
-        <div class = "contenedor_cart"></div>
-         
-     </div>
+        <div class="contenedor_cart"></div>
+
+        </div>
         <nav class="navbar navbar-expand-md">
-           <div class="container-fluid">
-             <a class="navbar-brand" href="../index.html"><img src="../Photos/logo_header.PNG" alt=""></a>
-               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                   aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                   <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarNav">
-                   <ul class="navbar-nav">
-                       <li class="nav-item">
-                           <a class="nav-link" href="../index.html">Inicio</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="shop.html">Shop</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="contacto.html">Contacto</a>
-                       </li>
-                     </ul>
-                   </div>
-                 </div> 
-               </nav>   
-             </header>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html"><img src="../Photos/logo_header.PNG" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-                <main>
-                    <h1 class="titulos_paginas animate__animated animate__zoomIn"> Contacto </h1>
-                    <p class="texto_paginas"> Para contactarse con nosotros por favor complete el formulario abajo. </p>
+    <main>
+        <h1 class="titulos_paginas animate__animated animate__zoomIn"> Contacto </h1>
+        <p class="texto_paginas"> Para contactarse con nosotros por favor complete el formulario abajo. </p>
 
-  
-                                <!-- Formulario de contacto-->
-                                
-                <form class="formulario" id="miFormulario" data-aos="fade-up" data-aos-duration="1500">
-                <div class=" items_form">
+
+        <!-- Formulario de contacto-->
+
+        <form class="formulario" id="mi_formulario" data-aos="fade-up" data-aos-duration="1500">
+            <div class=" items_form">
                 <label for="nombre">Nombre y Apellido:</label>
                 <input type="text" id="nombre_completo" name="nombre" placeholder="Nombre y Apellido">
                 <label for="email">E-mail:</label>
-                <input type="text"  id="email" name="email" placeholder="@ejemplo.com">
+                <input type="text" id="email" name="email" placeholder="@ejemplo.com">
                 <label for="celular">Número de Celular:</label>
                 <input type="text" id="numero_celular" name="celular" placeholder="ej. (+54 11) 278...">
                 <label for="mensaje">Deje su mensaje:</label>
-                <textarea name="mensaje" id="mensaje" placeholder="Escribe aquí su mensaje" cols="30" rows="10"></textarea>
+                <textarea name="mensaje" id="mensaje" placeholder="Escribe aquí su mensaje" cols="30"
+                    rows="10"></textarea>
                 <div class="button_form">
                     <button type="submit">Enviar</button>
                 </div>
             </div>
-            </form>
-                </main>
+        </form>
+    </main>
 
     <!--Footer de todas las paginas-->
     <footer>
         <div class="contenedor_footer">
-        <div class="items_footer">
-     <a class="logo_footer" href="../index.html"><img class="logo_footer" src="../Photos/logo_header.PNG" alt=""></a>
-        <p class="footer_letter"> Si le interesa tatuarse podrá encontrar más información en el Instagram. </p>
-        <a class="logo_insta_link" href="https://www.instagram.com/santuhorisada/" target="_blank">
-            <img class="logo_insta" src="../Photos/instagram_logo.png" alt=" Logo de Instagram"></a>
-            
-            <a class="logo_direccion" href="https://maps.app.goo.gl/AhYJxdLQMR4zB7vF9" target="_blank"><img class="logo_direccion" src="../Photos/dire_grande.png" alt=""></a>
-            <p class="footer_letter1"> Buenos Aires, Argentina </p>
-            <p class="footer_letter2"> Diseñado por Ana Maria Magalhães 2023 &copy; </p>
+            <div class="items_footer">
+                <a class="logo_footer" href="../index.html"><img class="logo_footer" src="../Photos/logo_header.PNG"
+                        alt=""></a>
+                <p class="footer_letter"> Si le interesa tatuarse podrá encontrar más información en el Instagram. </p>
+                <a class="logo_insta_link" href="https://www.instagram.com/santuhorisada/" target="_blank">
+                    <img class="logo_insta" src="../Photos/instagram_logo.png" alt=" Logo de Instagram"></a>
+
+                <a class="logo_direccion" href="https://maps.app.goo.gl/AhYJxdLQMR4zB7vF9" target="_blank"><img
+                        class="logo_direccion" src="../Photos/dire_grande.png" alt=""></a>
+                <p class="footer_letter1"> Buenos Aires, Argentina </p>
+                <p class="footer_letter2"> Diseñado por Ana Maria Magalhães 2023 &copy; </p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-     <!-- Vinculo con la pagina de bootstrap-->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
- </script>
+    <!-- Vinculo con la pagina de bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
 
-   <!-- Vinculo pagina animaciones-->
-   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-   <script>
-    AOS.init();
-  </script>
-    
+    <!-- Vinculo pagina animaciones-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 </body>
+
 </html>

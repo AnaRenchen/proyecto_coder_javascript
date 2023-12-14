@@ -1,71 +1,72 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .body_color {
-  background-color: #fefdf5!important;
+  background-color: #fefdf5 !important;
 }
 
-  /* Estilos del header común a todas las páginas*/
+/* Estilos del header común a todas las páginas*/
 
-  header {
-    background-color: white ;
+header {
+  background-color: white;
 
-  }
-  header img {
-    width: 3.5rem;
-    transition: transform 0.8s ease-in-out;
-  }
+}
 
-  header img:hover {
-    transform: scale(1.08);
-  }
+header img {
+  width: 3.5rem;
+  transition: transform 0.8s ease-in-out;
+}
 
-  .contenedor_cart{
-    display: flex;
-    justify-content: right;
-    background-color: #740001;
-    height: 3.5rem;
-  }
+header img:hover {
+  transform: scale(1.08);
+}
 
-  header .navbar .navbar-nav .nav-link {
-    color: black;
-    text-decoration: none;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.3rem;
-    margin: 0.8rem;
-  }
+.contenedor_cart {
+  display: flex;
+  justify-content: right;
+  background-color: #740001;
+  height: 3.5rem;
+}
 
-  header .navbar .navbar-nav .nav-link:hover {
-    color: #EEBA30;
-  }
-  
-  /*Icono carrito de compras*/
+header .navbar .navbar-nav .nav-link {
+  color: black;
+  text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.3rem;
+  margin: 0.8rem;
+}
 
-  .carrito{
-    width: 2rem;
-    margin-right: 20px;
-    margin-top: 10px;
-  }
+header .navbar .navbar-nav .nav-link:hover {
+  color: #EEBA30;
+}
 
-  #carrito{
-    text-decoration: none;
-  }
+/*Icono carrito de compras*/
 
-  .contar_productos {
-    background-color:#740001;
-    border: 0.1rem solid black;
-    text-decoration: none;
-    color:black;
-    width: 20px;
-    height: 20px;
-    margin-top: 15px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+.carrito {
+  width: 2rem;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+#carrito {
+  text-decoration: none;
+}
+
+.contar_productos {
+  background-color: #740001;
+  border: 0.1rem solid black;
+  text-decoration: none;
+  color: black;
+  width: 26px;
+  height: 26px;
+  margin-top: 15px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
 /* Modal con el carrito de compras*/
@@ -74,10 +75,12 @@
   from {
     transform: translateY(-100%);
   }
+
   to {
     transform: translateY(0);
   }
 }
+
 .modal {
   display: flex;
   position: fixed;
@@ -87,7 +90,7 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  animation: slideInFromTop 0.5s ease-in-out; 
+  animation: slideInFromTop 0.5s ease-in-out;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -105,13 +108,13 @@
 
 .header_modal {
   padding: 2px 16px;
-  background-color:#740001;
+  background-color: #740001;
   color: whitesmoke;
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
 }
 
-.close{
+.close {
   cursor: pointer;
   float: right;
   font-size: 25px;
@@ -125,7 +128,7 @@
 
 .contenedor_producto {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
   height: 150px;
   background-color: rgb(230, 230, 207);
@@ -152,7 +155,7 @@
 
 .modal_footer {
   padding: 4px 16px;
-  background-color:#D3A625;
+  background-color: #D3A625;
   color: white;
   display: flex;
   flex-direction: row;
@@ -160,7 +163,7 @@
   align-items: center;
 }
 
-#total{
+#total {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.3rem;
 }
@@ -180,175 +183,179 @@
   border: none;
   border-radius: 5px;
 }
- 
-  /* Estilos de la portada de la página*/
 
-  body, html {
-    height: 100%;
-  }
-  
-  .parallax1 {
-    background-image: url('../Photos/foto_back_portada.jpeg');
-    height: 50%; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+/* Estilos de la portada de la página*/
 
-  .parallax_portada1{
-    border:solid 3px #740001;
-    background-color: #fefdf5;
-  }
- 
-  .parallax2 {
-    background-image: url('../Photos/karajishi_portada.jpg');
-    height: 50%; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .parallax_portada2{
-    border:solid 3px #740001;
-    background-color: #fefdf5;
-  }
-
-  .medio_parallax{
-    height: 200px;
-    background-color: #666;
-  }
-
-  .titulo_portada{
-    color: black;
-    font-size: 3rem;
-    font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 0.1em;
-    font-weight:100;
-    line-height: 1.2;
-  }
-
-  .sutitulo_portada{
-    color:black;
-    font-size: 1.5rem;
-    font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 0.1em;
-    font-weight: lighter;
-    line-height: 1.2;
-  }
-
-  .texto_portada{
-    color:black;
-    font-size: 1.125rem;
-    font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 0.1em;
-    font-weight: lighter;
-    line-height: 2;
-  }
-
-  .texto_portada2{
-    color:black;
-    font-size: 1.125rem;
-    font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 0.1em;
-    font-weight: lighter;
-    line-height: 2;
-    text-align:start;
-  }
-
-  .sumie, .shinto {
-    font-style: italic;
-  }
-
-  .contenedor_index{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-  .contenedor_index .items_index {
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-items: center;
-    text-align: center;
-    margin: 50px;
-  }
-
-  .titulos_paginas{
-    font-size: 2.5rem;
-    color: black;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: lighter;
-    letter-spacing: 0.1em;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
-  }
-  .texto_paginas{
-    font-size: 1.3rem;
-    color: black;
-    font-family: "Times New Roman", Times, serif;
-    text-align: center;
-    margin-top: 5px;
-    letter-spacing: 0.1em;
-  }
-
-  .texto_paginas_shop_dolares{
-    font-size: 0.8rem;
-    font-weight: bolder;
-    font-style: italic;
-    color: black;
-    font-family: "Times New Roman", Times, serif;
-    text-align: center;
-    margin-top: 5px;
-    letter-spacing: 0.1em;
-  }
-
-
-  /*Galeria de imágenes para la compra de productos*/
-
-   #contenedor_pinturas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-  }
-  
-  #contenedor_souvenirs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-  }
-
-   .card img {
-    width: 100%;
-    height: auto;
-  }
-
-  .card img:hover {
-    border: 2px solid #740001;
-  }
-
-  .card {
-    width: 300px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+body,
+html {
+  height: 100%;
 }
 
-  .texto_imagen {
-    margin-top: 10px;
-    font-size: 1rem;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 500;
-    line-height: 18px;
-    color: black;
-  }
+.parallax1 {
+  background-image: url('../Photos/foto_back_portada.jpeg');
+  height: 50%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  .boton_agregar{
+.parallax_portada1 {
+  border: solid 3px #740001;
+  background-color: #fefdf5;
+}
+
+.parallax2 {
+  background-image: url('../Photos/karajishi_portada.jpg');
+  height: 50%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax_portada2 {
+  border: solid 3px #740001;
+  background-color: #fefdf5;
+}
+
+.medio_parallax {
+  height: 200px;
+  background-color: #666;
+}
+
+.titulo_portada {
+  color: black;
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0.1em;
+  font-weight: 100;
+  line-height: 1.2;
+}
+
+.sutitulo_portada {
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0.1em;
+  font-weight: lighter;
+  line-height: 1.2;
+}
+
+.texto_portada {
+  color: black;
+  font-size: 1.125rem;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0.1em;
+  font-weight: lighter;
+  line-height: 2;
+}
+
+.texto_portada2 {
+  color: black;
+  font-size: 1.125rem;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0.1em;
+  font-weight: lighter;
+  line-height: 2;
+  text-align: start;
+}
+
+.sumie,
+.shinto {
+  font-style: italic;
+}
+
+.contenedor_index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.contenedor_index .items_index {
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  margin: 50px;
+}
+
+.titulos_paginas {
+  font-size: 2.5rem;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.texto_paginas {
+  font-size: 1.3rem;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  margin-top: 5px;
+  letter-spacing: 0.1em;
+}
+
+.texto_paginas_shop_dolares {
+  font-size: 0.8rem;
+  font-weight: bolder;
+  font-style: italic;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  margin-top: 5px;
+  letter-spacing: 0.1em;
+}
+
+
+/*Galeria de imágenes para la compra de productos*/
+
+#contenedor_pinturas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+#contenedor_souvenirs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card img:hover {
+  border: 2px solid #740001;
+}
+
+.card {
+  width: 300px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.texto_imagen {
+  margin-top: 10px;
+  font-size: 1rem;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  line-height: 18px;
+  color: black;
+}
+
+.boton_agregar {
   border: none;
   color: black;
   text-decoration: none;
@@ -361,389 +368,353 @@
   cursor: pointer;
   transition: 0.5s;
   margin-bottom: 0px;
-  }
-
-  .boton_agregar:hover {
-    background-color:#D3A625;
-    padding: 8px;
-    transition: 0.5s;
-  }
-
-  .flecha_arriba {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-
-  .pinturas {
-    margin-top: 30px;
-    margin-bottom: 50px;
-    border-top: solid #740001;
-  }
-
-  .souvenirs{
-    border-top: solid #740001;
-    margin-bottom: 50px;
-  }
-
-  .titulo_section_shop{
-    color: black;
-    font-style: italic;
-    margin: 70px;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
-    font-size: 2rem;
-    background-color: #D3A625;
-    padding: 0.8rem;
-  }
-
-   /*Formulario de Contacto*/
-
-  .formulario {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    margin: 80px;
-  }
-
-  .items_form{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-  }
-
-
-  .formulario input, .formulario textarea {
-    background-color:beige;
-    padding: 10px;
-    width: 100%;
-    margin: 8px 0;
-    display: block;
-    border: 1.3px solid #740001;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  .formulario label {
-    justify-self: center;
-    font-family: "Times New Roman", Times, serif;
-    color: black;
-    font-size: 1.3rem;
-  }
-  
-  .formulario .button_form button[type=submit] {
-    border: none;
-    color:black;
-    background-color: #fefdf5;
-    border-radius: 4px;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: 600;
-    font-size: large;
-    cursor: pointer;
-    width: 100%;
-    padding: 5px 15px;
-    transition: 0.5s;
-    margin-top: 15px;
-  }
-
-  .formulario .button_form button[type=submit]:hover {
-    background-color:#740001;
-    transition: 0.5s;
-    color: #D3A625;
-  }
-
-  /* Estilos del footer común a todas las páginas*/
-
-  .contenedor_footer {
-    background-color: #D3A625;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .logo_footer{
-    width: 5rem;
-    margin-top: 15px;
-    margin-bottom: 15px;;
-  }
-
-  .logo_direccion{
-    width: 5rem;
-  }
-
-  .items_footer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    align-items:center;
-    margin: 15px;
-    line-height: 2rem;
-  }
-
-  .footer_letter {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.3rem;
-    color:black;
-    text-align: center;
-  }
-
-  footer .footer_letter1 {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 0.8rem;
-    font-weight: bolder;
-    color:black;
-  }
-
-  footer .footer_letter2 {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 0.8rem;
-    font-weight: bolder;
-    color:black;
-    margin-top: 15px;
-  }
- 
-  footer .logo_insta {
-    width: 40px;
-    margin-bottom: 15px;
-    transition: 0.8s ease-in-out;
-  }
-
-  footer .logo_insta:hover {
-    transform: scale(1.3);
-    transition: 0.8s;
-  }
-
-  /* Estilos media query para responsiveness*/
-
-  @media only screen and (max-width: 769px) {
-
-    .formulario {
-      margin: 30px;;
-    }
-
-    header{
-      padding-bottom: 1rem;
-    }
-
-  }
-
-
-  @media only screen and (max-device-width: 1366px) {
-    .parallax {
-      background-attachment: scroll;
-    }
 }
-    
-@media screen and (max-width: 600px) {
-  .contenido_modal {
-    width: 100%; 
-  }
 
-  .header_modal {
-    font-size: 18px; 
-  }
-
-  #total {
-    font-size: 17px; 
-    text-align: center;
-   
-  }
-
-  .contenedor_producto {
-    flex-direction: column;
-    height: 400px;
-  }
-
-  .boton_carrito{
-    padding: 3px 10px;
-    font-size: 15px;
-    margin: 4px 2px;
-  }
-    }
-
-     /* Estilos formulario para finalizar compra*/
-
-     #form_finalizar_compra{
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      z-index: 1;
-      max-height: 100vh;
-      padding-top: 50px;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.4);
-      
-    }
-
-    #form_finalizar_compra input[type="text"]  {
-      background-color:beige;
-      width: 100%;
-      padding: 2px;
-      display: block;
-      border: 1.3px solid #740001;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
-
-    #form_finalizar_compra input[type="text"].focus{
-      border:1.3px solid #D3A625;
-    }
-  
-    #form_finalizar_compra label {
-      justify-self: center;
-      font-family: "Times New Roman", Times, serif;
-      color: black;
-    }
-    .container_fincompra{
-      margin:auto;
-      width:100%;
-      max-width:500px;
-      max-height: 100%;
-      color:black;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.2rem;
-      background-color:#fefdf5;
-      border:5px solid #D3A625;
-      border-radius: 6px;
-      padding: 0.5em 0.6em 1.4em 0.6em;
-      display:grid;
-      gap:0.5em;
-      place-items:center;
-      grid-auto-columns:100%;
-      transform: var(--transform);
-      transition: var(--transition);
-    }
-
-    .fincompra_titulo{
-    display:flex;
-    text-align: center;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width:100%;
-    color: black;
-    font-size: 1rem;
-    }
-
-    .titulo_fincompra{
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: 500;
-    }
-
-    .datos_persona_fincompra{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-content: center;
-    width:90%;
-    max-width:500px;
-    border:2px solid black;
-    padding:0.5em 1.5em;
-    border-radius: 6px;
-    }
-
-    .subtitulos_form_compra{
-      font-family: 'Times New Roman', Times, serif;
-      text-align: center;
-      font-size: 1.5rem;
-
-    }
-
-    .importe_pago{
-      text-align: center;
-      font-size: 1.5rem;
-    }
-
-    .fincompra_datospago {
-      display:flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-content: center;
-      width:90%;
-      max-width:500px;
-      border:2px solid black;
-      padding:0.5em 1em;
-      border-radius: 6px;
-    }
-
-    #close_fin_compra{
-      margin-top:0em;
-      text-decoration: none;
-      margin-left:0.5em;
-      color:white;
-      background-color:#740001;
-      padding: 0.2em 0.5em;
-      font-weight: 500;
-      transition: background-color .3s;
-  }
-  
-  #finalizar_pago{
-    margin: 0 auto; 
-    display: block;
-    margin-top:1em;
-    margin-bottom: 1rem;
-    padding: 8px 18px;
-    font-size: 1.1rem;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #740001;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-
-    
+.boton_agregar:hover {
+  background-color: #D3A625;
+  padding: 8px;
+  transition: 0.5s;
 }
+
+.flecha_arriba {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.pinturas {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  border-top: solid #740001;
+}
+
+.souvenirs {
+  border-top: solid #740001;
+  margin-bottom: 50px;
+}
+
+.titulo_section_shop {
+  color: black;
+  font-style: italic;
+  margin: 70px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  background-color: #D3A625;
+  padding: 0.8rem;
+}
+
+/*Formulario de Contacto*/
+
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin: 80px;
+}
+
+.items_form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+
+.formulario input,
+.formulario textarea {
+  background-color: beige;
+  padding: 10px;
+  width: 100%;
+  margin: 8px 0;
+  display: block;
+  border: 1.3px solid #740001;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.formulario label {
+  justify-self: center;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  font-size: 1.3rem;
+}
+
+.formulario .button_form button[type=submit] {
+  border: none;
+  color: black;
+  background-color: #fefdf5;
+  border-radius: 4px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: large;
+  cursor: pointer;
+  width: 100%;
+  padding: 5px 15px;
+  transition: 0.5s;
+  margin-top: 15px;
+}
+
+.formulario .button_form button[type=submit]:hover {
+  background-color: #740001;
+  transition: 0.5s;
+  color: #D3A625;
+}
+
+/* Estilos del footer común a todas las páginas*/
+
+.contenedor_footer {
+  background-color: #D3A625;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.logo_footer {
+  width: 5rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  ;
+}
+
+.logo_direccion {
+  width: 5rem;
+}
+
+.items_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  line-height: 2rem;
+}
+
+.footer_letter {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.3rem;
+  color: black;
+  text-align: center;
+}
+
+footer .footer_letter1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  color: black;
+}
+
+footer .footer_letter2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  color: black;
+  margin-top: 15px;
+}
+
+footer .logo_insta {
+  width: 40px;
+  margin-bottom: 15px;
+  transition: 0.8s ease-in-out;
+}
+
+footer .logo_insta:hover {
+  transform: scale(1.3);
+  transition: 0.8s;
+}
+
+
+/* Estilos formulario para finalizar compra*/
+
+#form_finalizar_compra {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+  max-height: 100vh;
+  padding-top: 50px;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+#form_finalizar_compra input[type="text"] {
+  background-color: beige;
+  width: 100%;
+  padding: 2px;
+  display: block;
+  border: 1.3px solid #740001;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#form_finalizar_compra input[type="text"].focus {
+  border: 1.3px solid #D3A625;
+}
+
+#form_finalizar_compra label {
+  justify-self: center;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
+
+.container_fincompra {
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
+  max-height: 100%;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  background-color: #fefdf5;
+  border: 5px solid #D3A625;
+  border-radius: 6px;
+  padding: 0.5em 0.6em 1.4em 0.6em;
+  display: grid;
+  gap: 0.5em;
+  place-items: center;
+  grid-auto-columns: 100%;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+
+.fincompra_titulo {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: black;
+  font-size: 1rem;
+}
+
+.titulo_fincompra {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+}
+
+.datos_persona_fincompra {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  width: 90%;
+  max-width: 500px;
+  border: 2px solid black;
+  padding: 0.5em 1.5em;
+  border-radius: 6px;
+}
+
+.subtitulos_form_compra {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 1.5rem;
+
+}
+
+.importe_pago {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.fincompra_datospago {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  width: 90%;
+  max-width: 500px;
+  border: 2px solid black;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+}
+
+#close_fin_compra {
+  margin-top: 0em;
+  text-decoration: none;
+  margin-left: 0.5em;
+  color: white;
+  background-color: #740001;
+  padding: 0.2em 0.5em;
+  font-weight: 500;
+  transition: background-color .3s;
+}
+
+#finalizar_pago {
+  margin: 0 auto;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1rem;
+  padding: 8px 18px;
+  font-size: 1.1rem;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #740001;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+
+
+}
+
 #finalizar_pago:hover {
   background-color: #740001;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
- 
-  #total_pago{
+
+#total_pago {
   text-align: center;
   margin: 8px auto;
   font-size: 1.3rem;
   border: solid 1px black;
   width: 60%;
-  background-color:rgb(240, 215, 146);
+  background-color: rgb(240, 215, 146);
 }
 
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
+
 #form_finalizar_compra {
   animation: fadeIn 0.5s ease-in-out;
 }
 
- .contenedor_filtro{
+.contenedor_filtro {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
- } 
+}
 
- .search_input{
-  background-color:beige;
+.search_input {
+  background-color: beige;
   border: solid 1.5px #740001;
   margin: 0.5rem;
   padding: 8px 16px 8px 16px;
   border-radius: 5px;
   box-sizing: border-box;
   width: 300px;
- }
+}
 
- .boton_filtro{
-  background-color:#EEBA30;
+.boton_filtro {
+  background-color: #EEBA30;
   font-family: 'Times New Roman', Times, serif;
   border: none;
   color: black;
@@ -756,12 +727,55 @@
   border-radius: 16px;
   transition: background-color 0.3s ease-in-out;
 
- }
- .boton_filtro:hover{
-  background-color:#ddd;
- }
-   
- 
- 
-  
+}
 
+.boton_filtro:hover {
+  background-color: #ddd;
+}
+
+/* Estilos media query para responsiveness*/
+
+@media only screen and (max-width: 769px) {
+
+  .formulario {
+    margin: 30px;
+    ;
+  }
+
+  header {
+    padding-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contenido_modal {
+    width: 100%;
+  }
+
+  .header_modal {
+    font-size: 18px;
+  }
+
+  #total {
+    font-size: 17px;
+    text-align: center;
+
+  }
+
+  .contenedor_producto {
+    flex-direction: column;
+    height: 400px;
+  }
+
+  .boton_carrito {
+    padding: 3px 10px;
+    font-size: 15px;
+    margin: 4px 2px;
+  }
+}
